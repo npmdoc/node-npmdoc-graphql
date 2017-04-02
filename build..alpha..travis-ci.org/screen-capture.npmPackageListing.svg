@@ -1,176 +1,176 @@
 <svg height="2766" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="2766" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  1.  2017-04-02 15:27:13 +0000     1520 byte  LICENSE</tspan>
-<tspan x="10" y="42">  2.  2017-04-02 15:27:13 +0000     1994 byte  PATENTS</tspan>
-<tspan x="10" y="58">  3.  2017-04-02 15:27:13 +0000     3581 byte  README.md</tspan>
-<tspan x="10" y="74">  4.  2017-04-02 15:27:13 +0000     3578 byte  error/GraphQLError.js</tspan>
-<tspan x="10" y="90">  5.  2017-04-02 15:27:13 +0000     5013 byte  error/GraphQLError.js.flow</tspan>
-<tspan x="10" y="106">  6.  2017-04-02 15:27:13 +0000      975 byte  error/formatError.js</tspan>
-<tspan x="10" y="122">  7.  2017-04-02 15:27:13 +0000     1007 byte  error/formatError.js.flow</tspan>
-<tspan x="10" y="138">  8.  2017-04-02 15:27:13 +0000      825 byte  error/index.js</tspan>
-<tspan x="10" y="154">  9.  2017-04-02 15:27:13 +0000      590 byte  error/index.js.flow</tspan>
-<tspan x="10" y="170"> 10.  2017-04-02 15:27:13 +0000     1221 byte  error/locatedError.js</tspan>
-<tspan x="10" y="186"> 11.  2017-04-02 15:27:13 +0000     1241 byte  error/locatedError.js.flow</tspan>
-<tspan x="10" y="202"> 12.  2017-04-02 15:27:13 +0000     1805 byte  error/syntaxError.js</tspan>
-<tspan x="10" y="218"> 13.  2017-04-02 15:27:13 +0000     1838 byte  error/syntaxError.js.flow</tspan>
-<tspan x="10" y="234"> 14.  2017-04-02 15:27:13 +0000    30276 byte  execution/execute.js</tspan>
-<tspan x="10" y="250"> 15.  2017-04-02 15:27:13 +0000    33961 byte  execution/execute.js.flow</tspan>
-<tspan x="10" y="266"> 16.  2017-04-02 15:27:13 +0000      543 byte  execution/index.js</tspan>
-<tspan x="10" y="282"> 17.  2017-04-02 15:27:13 +0000      438 byte  execution/index.js.flow</tspan>
-<tspan x="10" y="298"> 18.  2017-04-02 15:27:13 +0000     8859 byte  execution/values.js</tspan>
-<tspan x="10" y="314"> 19.  2017-04-02 15:27:13 +0000     8453 byte  execution/values.js.flow</tspan>
-<tspan x="10" y="330"> 20.  2017-04-02 15:27:13 +0000     2265 byte  graphql.js</tspan>
-<tspan x="10" y="346"> 21.  2017-04-02 15:27:13 +0000     2428 byte  graphql.js.flow</tspan>
-<tspan x="10" y="362"> 22.  2017-04-02 15:27:13 +0000    12948 byte  index.js</tspan>
-<tspan x="10" y="378"> 23.  2017-04-02 15:27:13 +0000     7507 byte  index.js.flow</tspan>
-<tspan x="10" y="394"> 24.  2017-04-02 15:27:13 +0000      550 byte  jsutils/find.js</tspan>
-<tspan x="10" y="410"> 25.  2017-04-02 15:27:13 +0000      518 byte  jsutils/find.js.flow</tspan>
-<tspan x="10" y="426"> 26.  2017-04-02 15:27:13 +0000      513 byte  jsutils/invariant.js</tspan>
-<tspan x="10" y="442"> 27.  2017-04-02 15:27:13 +0000      446 byte  jsutils/invariant.js.flow</tspan>
-<tspan x="10" y="458"> 28.  2017-04-02 15:27:13 +0000      552 byte  jsutils/isInvalid.js</tspan>
-<tspan x="10" y="474"> 29.  2017-04-02 15:27:13 +0000      486 byte  jsutils/isInvalid.js.flow</tspan>
-<tspan x="10" y="490"> 30.  2017-04-02 15:27:13 +0000      576 byte  jsutils/isNullish.js</tspan>
-<tspan x="10" y="506"> 31.  2017-04-02 15:27:13 +0000      510 byte  jsutils/isNullish.js.flow</tspan>
-<tspan x="10" y="522"> 32.  2017-04-02 15:27:13 +0000     1201 byte  jsutils/keyMap.js</tspan>
-<tspan x="10" y="538"> 33.  2017-04-02 15:27:13 +0000     1162 byte  jsutils/keyMap.js.flow</tspan>
-<tspan x="10" y="554"> 34.  2017-04-02 15:27:13 +0000     1026 byte  jsutils/keyValMap.js</tspan>
-<tspan x="10" y="570"> 35.  2017-04-02 15:27:13 +0000     1017 byte  jsutils/keyValMap.js.flow</tspan>
-<tspan x="10" y="586"> 36.  2017-04-02 15:27:13 +0000      804 byte  jsutils/quotedOrList.js</tspan>
-<tspan x="10" y="602"> 37.  2017-04-02 15:27:13 +0000      730 byte  jsutils/quotedOrList.js.flow</tspan>
-<tspan x="10" y="618"> 38.  2017-04-02 15:27:13 +0000     2264 byte  jsutils/suggestionList.js</tspan>
-<tspan x="10" y="634"> 39.  2017-04-02 15:27:13 +0000     2260 byte  jsutils/suggestionList.js.flow</tspan>
-<tspan x="10" y="650"> 40.  2017-04-02 15:27:13 +0000       13 byte  language/ast.js</tspan>
-<tspan x="10" y="666"> 41.  2017-04-02 15:27:13 +0000     9407 byte  language/ast.js.flow</tspan>
-<tspan x="10" y="682"> 42.  2017-04-02 15:27:13 +0000     2486 byte  language/index.js</tspan>
-<tspan x="10" y="698"> 43.  2017-04-02 15:27:13 +0000     1784 byte  language/index.js.flow</tspan>
-<tspan x="10" y="714"> 44.  2017-04-02 15:27:13 +0000     2912 byte  language/kinds.js</tspan>
-<tspan x="10" y="730"> 45.  2017-04-02 15:27:13 +0000     2260 byte  language/kinds.js.flow</tspan>
-<tspan x="10" y="746"> 46.  2017-04-02 15:27:13 +0000    14087 byte  language/lexer.js</tspan>
-<tspan x="10" y="762"> 47.  2017-04-02 15:27:13 +0000    14849 byte  language/lexer.js.flow</tspan>
-<tspan x="10" y="778"> 48.  2017-04-02 15:27:13 +0000      940 byte  language/location.js</tspan>
-<tspan x="10" y="794"> 49.  2017-04-02 15:27:13 +0000      955 byte  language/location.js.flow</tspan>
-<tspan x="10" y="810"> 50.  2017-04-02 15:27:13 +0000    25740 byte  language/parser.js</tspan>
-<tspan x="10" y="826"> 51.  2017-04-02 15:27:13 +0000    28519 byte  language/parser.js.flow</tspan>
-<tspan x="10" y="842"> 52.  2017-04-02 15:27:13 +0000     8546 byte  language/printer.js</tspan>
-<tspan x="10" y="858"> 53.  2017-04-02 15:27:13 +0000     5578 byte  language/printer.js.flow</tspan>
-<tspan x="10" y="874"> 54.  2017-04-02 15:27:13 +0000      966 byte  language/source.js</tspan>
-<tspan x="10" y="890"> 55.  2017-04-02 15:27:13 +0000      756 byte  language/source.js.flow</tspan>
-<tspan x="10" y="906"> 56.  2017-04-02 15:27:13 +0000    11300 byte  language/visitor.js</tspan>
-<tspan x="10" y="922"> 57.  2017-04-02 15:27:13 +0000    11082 byte  language/visitor.js.flow</tspan>
-<tspan x="10" y="938"> 58.  2017-04-02 15:27:13 +0000     5551 byte  package.json</tspan>
-<tspan x="10" y="954"> 59.  2017-04-02 15:27:13 +0000    26545 byte  type/definition.js</tspan>
-<tspan x="10" y="970"> 60.  2017-04-02 15:27:13 +0000    32031 byte  type/definition.js.flow</tspan>
-<tspan x="10" y="986"> 61.  2017-04-02 15:27:13 +0000     5245 byte  type/directives.js</tspan>
-<tspan x="10" y="1002"> 62.  2017-04-02 15:27:13 +0000     4966 byte  type/directives.js.flow</tspan>
-<tspan x="10" y="1018"> 63.  2017-04-02 15:27:13 +0000     7317 byte  type/index.js</tspan>
-<tspan x="10" y="1034"> 64.  2017-04-02 15:27:13 +0000     2636 byte  type/index.js.flow</tspan>
-<tspan x="10" y="1050"> 65.  2017-04-02 15:27:13 +0000    18617 byte  type/introspection.js</tspan>
-<tspan x="10" y="1066"> 66.  2017-04-02 15:27:13 +0000    15400 byte  type/introspection.js.flow</tspan>
-<tspan x="10" y="1082"> 67.  2017-04-02 15:27:13 +0000     4371 byte  type/scalars.js</tspan>
-<tspan x="10" y="1098"> 68.  2017-04-02 15:27:13 +0000     3783 byte  type/scalars.js.flow</tspan>
-<tspan x="10" y="1114"> 69.  2017-04-02 15:27:13 +0000    11056 byte  type/schema.js</tspan>
-<tspan x="10" y="1130"> 70.  2017-04-02 15:27:13 +0000    10772 byte  type/schema.js.flow</tspan>
-<tspan x="10" y="1146"> 71.  2017-04-02 15:27:13 +0000     8282 byte  utilities/TypeInfo.js</tspan>
-<tspan x="10" y="1162"> 72.  2017-04-02 15:27:13 +0000     8250 byte  utilities/TypeInfo.js.flow</tspan>
-<tspan x="10" y="1178"> 73.  2017-04-02 15:27:13 +0000     1919 byte  utilities/assertValidName.js</tspan>
-<tspan x="10" y="1194"> 74.  2017-04-02 15:27:13 +0000     1879 byte  utilities/assertValidName.js.flow</tspan>
-<tspan x="10" y="1210"> 75.  2017-04-02 15:27:13 +0000     5525 byte  utilities/astFromValue.js</tspan>
-<tspan x="10" y="1226"> 76.  2017-04-02 15:27:13 +0000     5106 byte  utilities/astFromValue.js.flow</tspan>
-<tspan x="10" y="1242"> 77.  2017-04-02 15:27:13 +0000    14529 byte  utilities/buildASTSchema.js</tspan>
-<tspan x="10" y="1258"> 78.  2017-04-02 15:27:13 +0000    14960 byte  utilities/buildASTSchema.js.flow</tspan>
-<tspan x="10" y="1274"> 79.  2017-04-02 15:27:13 +0000    11788 byte  utilities/buildClientSchema.js</tspan>
-<tspan x="10" y="1290"> 80.  2017-04-02 15:27:13 +0000    12222 byte  utilities/buildClientSchema.js.flow</tspan>
-<tspan x="10" y="1306"> 81.  2017-04-02 15:27:13 +0000      974 byte  utilities/concatAST.js</tspan>
-<tspan x="10" y="1322"> 82.  2017-04-02 15:27:13 +0000      977 byte  utilities/concatAST.js.flow</tspan>
-<tspan x="10" y="1338"> 83.  2017-04-02 15:27:13 +0000    18827 byte  utilities/extendSchema.js</tspan>
-<tspan x="10" y="1354"> 84.  2017-04-02 15:27:13 +0000    19064 byte  utilities/extendSchema.js.flow</tspan>
-<tspan x="10" y="1370"> 85.  2017-04-02 15:27:13 +0000    10911 byte  utilities/findBreakingChanges.js</tspan>
-<tspan x="10" y="1386"> 86.  2017-04-02 15:27:13 +0000    11296 byte  utilities/findBreakingChanges.js.flow</tspan>
-<tspan x="10" y="1402"> 87.  2017-04-02 15:27:13 +0000     1935 byte  utilities/findDeprecatedUsages.js</tspan>
-<tspan x="10" y="1418"> 88.  2017-04-02 15:27:13 +0000     1931 byte  utilities/findDeprecatedUsages.js.flow</tspan>
-<tspan x="10" y="1434"> 89.  2017-04-02 15:27:13 +0000     1357 byte  utilities/getOperationAST.js</tspan>
-<tspan x="10" y="1450"> 90.  2017-04-02 15:27:13 +0000     1398 byte  utilities/getOperationAST.js.flow</tspan>
-<tspan x="10" y="1466"> 91.  2017-04-02 15:27:13 +0000     4430 byte  utilities/index.js</tspan>
-<tspan x="10" y="1482"> 92.  2017-04-02 15:27:13 +0000     2936 byte  utilities/index.js.flow</tspan>
-<tspan x="10" y="1498"> 93.  2017-04-02 15:27:13 +0000     1981 byte  utilities/introspectionQuery.js</tspan>
-<tspan x="10" y="1514"> 94.  2017-04-02 15:27:13 +0000     4387 byte  utilities/introspectionQuery.js.flow</tspan>
-<tspan x="10" y="1530"> 95.  2017-04-02 15:27:13 +0000     3836 byte  utilities/isValidJSValue.js</tspan>
-<tspan x="10" y="1546"> 96.  2017-04-02 15:27:13 +0000     3060 byte  utilities/isValidJSValue.js.flow</tspan>
-<tspan x="10" y="1562"> 97.  2017-04-02 15:27:13 +0000     4217 byte  utilities/isValidLiteralValue.js</tspan>
-<tspan x="10" y="1578"> 98.  2017-04-02 15:27:13 +0000     3627 byte  utilities/isValidLiteralValue.js.flow</tspan>
-<tspan x="10" y="1594"> 99.  2017-04-02 15:27:13 +0000     8872 byte  utilities/schemaPrinter.js</tspan>
-<tspan x="10" y="1610">100.  2017-04-02 15:27:13 +0000     8637 byte  utilities/schemaPrinter.js.flow</tspan>
-<tspan x="10" y="1626">101.  2017-04-02 15:27:13 +0000     3091 byte  utilities/separateOperations.js</tspan>
-<tspan x="10" y="1642">102.  2017-04-02 15:27:13 +0000     3155 byte  utilities/separateOperations.js.flow</tspan>
-<tspan x="10" y="1658">103.  2017-04-02 15:27:13 +0000     4315 byte  utilities/typeComparators.js</tspan>
-<tspan x="10" y="1674">104.  2017-04-02 15:27:13 +0000     4431 byte  utilities/typeComparators.js.flow</tspan>
-<tspan x="10" y="1690">105.  2017-04-02 15:27:13 +0000     1260 byte  utilities/typeFromAST.js</tspan>
-<tspan x="10" y="1706">106.  2017-04-02 15:27:13 +0000     1250 byte  utilities/typeFromAST.js.flow</tspan>
-<tspan x="10" y="1722">107.  2017-04-02 15:27:13 +0000     6036 byte  utilities/valueFromAST.js</tspan>
-<tspan x="10" y="1738">108.  2017-04-02 15:27:13 +0000     5502 byte  utilities/valueFromAST.js.flow</tspan>
-<tspan x="10" y="1754">109.  2017-04-02 15:27:13 +0000      593 byte  validation/index.js</tspan>
-<tspan x="10" y="1770">110.  2017-04-02 15:27:13 +0000      416 byte  validation/index.js.flow</tspan>
-<tspan x="10" y="1786">111.  2017-04-02 15:27:13 +0000     1538 byte  validation/rules/ArgumentsOfCorrectType.js</tspan>
-<tspan x="10" y="1802">112.  2017-04-02 15:27:13 +0000     1627 byte  validation/rules/ArgumentsOfCorrectType.js.flow</tspan>
-<tspan x="10" y="1818">113.  2017-04-02 15:27:13 +0000     2490 byte  validation/rules/DefaultValuesOfCorrectType.js</tspan>
-<tspan x="10" y="1834">114.  2017-04-02 15:27:13 +0000     2438 byte  validation/rules/DefaultValuesOfCorrectType.js.fl\</tspan>
+<tspan x="10" y="26">  1.  2017-04-02 15:50:17 +0000     1520 byte  LICENSE</tspan>
+<tspan x="10" y="42">  2.  2017-04-02 15:50:17 +0000     1994 byte  PATENTS</tspan>
+<tspan x="10" y="58">  3.  2017-04-02 15:50:17 +0000     3581 byte  README.md</tspan>
+<tspan x="10" y="74">  4.  2017-04-02 15:50:17 +0000     3578 byte  error/GraphQLError.js</tspan>
+<tspan x="10" y="90">  5.  2017-04-02 15:50:17 +0000     5013 byte  error/GraphQLError.js.flow</tspan>
+<tspan x="10" y="106">  6.  2017-04-02 15:50:17 +0000      975 byte  error/formatError.js</tspan>
+<tspan x="10" y="122">  7.  2017-04-02 15:50:17 +0000     1007 byte  error/formatError.js.flow</tspan>
+<tspan x="10" y="138">  8.  2017-04-02 15:50:17 +0000      825 byte  error/index.js</tspan>
+<tspan x="10" y="154">  9.  2017-04-02 15:50:17 +0000      590 byte  error/index.js.flow</tspan>
+<tspan x="10" y="170"> 10.  2017-04-02 15:50:17 +0000     1221 byte  error/locatedError.js</tspan>
+<tspan x="10" y="186"> 11.  2017-04-02 15:50:17 +0000     1241 byte  error/locatedError.js.flow</tspan>
+<tspan x="10" y="202"> 12.  2017-04-02 15:50:17 +0000     1805 byte  error/syntaxError.js</tspan>
+<tspan x="10" y="218"> 13.  2017-04-02 15:50:17 +0000     1838 byte  error/syntaxError.js.flow</tspan>
+<tspan x="10" y="234"> 14.  2017-04-02 15:50:17 +0000    30276 byte  execution/execute.js</tspan>
+<tspan x="10" y="250"> 15.  2017-04-02 15:50:17 +0000    33961 byte  execution/execute.js.flow</tspan>
+<tspan x="10" y="266"> 16.  2017-04-02 15:50:17 +0000      543 byte  execution/index.js</tspan>
+<tspan x="10" y="282"> 17.  2017-04-02 15:50:17 +0000      438 byte  execution/index.js.flow</tspan>
+<tspan x="10" y="298"> 18.  2017-04-02 15:50:17 +0000     8859 byte  execution/values.js</tspan>
+<tspan x="10" y="314"> 19.  2017-04-02 15:50:17 +0000     8453 byte  execution/values.js.flow</tspan>
+<tspan x="10" y="330"> 20.  2017-04-02 15:50:17 +0000     2265 byte  graphql.js</tspan>
+<tspan x="10" y="346"> 21.  2017-04-02 15:50:17 +0000     2428 byte  graphql.js.flow</tspan>
+<tspan x="10" y="362"> 22.  2017-04-02 15:50:17 +0000    12948 byte  index.js</tspan>
+<tspan x="10" y="378"> 23.  2017-04-02 15:50:17 +0000     7507 byte  index.js.flow</tspan>
+<tspan x="10" y="394"> 24.  2017-04-02 15:50:17 +0000      550 byte  jsutils/find.js</tspan>
+<tspan x="10" y="410"> 25.  2017-04-02 15:50:17 +0000      518 byte  jsutils/find.js.flow</tspan>
+<tspan x="10" y="426"> 26.  2017-04-02 15:50:17 +0000      513 byte  jsutils/invariant.js</tspan>
+<tspan x="10" y="442"> 27.  2017-04-02 15:50:17 +0000      446 byte  jsutils/invariant.js.flow</tspan>
+<tspan x="10" y="458"> 28.  2017-04-02 15:50:17 +0000      552 byte  jsutils/isInvalid.js</tspan>
+<tspan x="10" y="474"> 29.  2017-04-02 15:50:17 +0000      486 byte  jsutils/isInvalid.js.flow</tspan>
+<tspan x="10" y="490"> 30.  2017-04-02 15:50:17 +0000      576 byte  jsutils/isNullish.js</tspan>
+<tspan x="10" y="506"> 31.  2017-04-02 15:50:17 +0000      510 byte  jsutils/isNullish.js.flow</tspan>
+<tspan x="10" y="522"> 32.  2017-04-02 15:50:17 +0000     1201 byte  jsutils/keyMap.js</tspan>
+<tspan x="10" y="538"> 33.  2017-04-02 15:50:17 +0000     1162 byte  jsutils/keyMap.js.flow</tspan>
+<tspan x="10" y="554"> 34.  2017-04-02 15:50:17 +0000     1026 byte  jsutils/keyValMap.js</tspan>
+<tspan x="10" y="570"> 35.  2017-04-02 15:50:17 +0000     1017 byte  jsutils/keyValMap.js.flow</tspan>
+<tspan x="10" y="586"> 36.  2017-04-02 15:50:17 +0000      804 byte  jsutils/quotedOrList.js</tspan>
+<tspan x="10" y="602"> 37.  2017-04-02 15:50:17 +0000      730 byte  jsutils/quotedOrList.js.flow</tspan>
+<tspan x="10" y="618"> 38.  2017-04-02 15:50:17 +0000     2264 byte  jsutils/suggestionList.js</tspan>
+<tspan x="10" y="634"> 39.  2017-04-02 15:50:17 +0000     2260 byte  jsutils/suggestionList.js.flow</tspan>
+<tspan x="10" y="650"> 40.  2017-04-02 15:50:17 +0000       13 byte  language/ast.js</tspan>
+<tspan x="10" y="666"> 41.  2017-04-02 15:50:17 +0000     9407 byte  language/ast.js.flow</tspan>
+<tspan x="10" y="682"> 42.  2017-04-02 15:50:17 +0000     2486 byte  language/index.js</tspan>
+<tspan x="10" y="698"> 43.  2017-04-02 15:50:17 +0000     1784 byte  language/index.js.flow</tspan>
+<tspan x="10" y="714"> 44.  2017-04-02 15:50:17 +0000     2912 byte  language/kinds.js</tspan>
+<tspan x="10" y="730"> 45.  2017-04-02 15:50:17 +0000     2260 byte  language/kinds.js.flow</tspan>
+<tspan x="10" y="746"> 46.  2017-04-02 15:50:17 +0000    14087 byte  language/lexer.js</tspan>
+<tspan x="10" y="762"> 47.  2017-04-02 15:50:17 +0000    14849 byte  language/lexer.js.flow</tspan>
+<tspan x="10" y="778"> 48.  2017-04-02 15:50:17 +0000      940 byte  language/location.js</tspan>
+<tspan x="10" y="794"> 49.  2017-04-02 15:50:17 +0000      955 byte  language/location.js.flow</tspan>
+<tspan x="10" y="810"> 50.  2017-04-02 15:50:17 +0000    25740 byte  language/parser.js</tspan>
+<tspan x="10" y="826"> 51.  2017-04-02 15:50:17 +0000    28519 byte  language/parser.js.flow</tspan>
+<tspan x="10" y="842"> 52.  2017-04-02 15:50:17 +0000     8546 byte  language/printer.js</tspan>
+<tspan x="10" y="858"> 53.  2017-04-02 15:50:17 +0000     5578 byte  language/printer.js.flow</tspan>
+<tspan x="10" y="874"> 54.  2017-04-02 15:50:17 +0000      966 byte  language/source.js</tspan>
+<tspan x="10" y="890"> 55.  2017-04-02 15:50:17 +0000      756 byte  language/source.js.flow</tspan>
+<tspan x="10" y="906"> 56.  2017-04-02 15:50:17 +0000    11300 byte  language/visitor.js</tspan>
+<tspan x="10" y="922"> 57.  2017-04-02 15:50:17 +0000    11082 byte  language/visitor.js.flow</tspan>
+<tspan x="10" y="938"> 58.  2017-04-02 15:50:17 +0000     5551 byte  package.json</tspan>
+<tspan x="10" y="954"> 59.  2017-04-02 15:50:17 +0000    26545 byte  type/definition.js</tspan>
+<tspan x="10" y="970"> 60.  2017-04-02 15:50:17 +0000    32031 byte  type/definition.js.flow</tspan>
+<tspan x="10" y="986"> 61.  2017-04-02 15:50:17 +0000     5245 byte  type/directives.js</tspan>
+<tspan x="10" y="1002"> 62.  2017-04-02 15:50:17 +0000     4966 byte  type/directives.js.flow</tspan>
+<tspan x="10" y="1018"> 63.  2017-04-02 15:50:17 +0000     7317 byte  type/index.js</tspan>
+<tspan x="10" y="1034"> 64.  2017-04-02 15:50:17 +0000     2636 byte  type/index.js.flow</tspan>
+<tspan x="10" y="1050"> 65.  2017-04-02 15:50:17 +0000    18617 byte  type/introspection.js</tspan>
+<tspan x="10" y="1066"> 66.  2017-04-02 15:50:17 +0000    15400 byte  type/introspection.js.flow</tspan>
+<tspan x="10" y="1082"> 67.  2017-04-02 15:50:17 +0000     4371 byte  type/scalars.js</tspan>
+<tspan x="10" y="1098"> 68.  2017-04-02 15:50:17 +0000     3783 byte  type/scalars.js.flow</tspan>
+<tspan x="10" y="1114"> 69.  2017-04-02 15:50:17 +0000    11056 byte  type/schema.js</tspan>
+<tspan x="10" y="1130"> 70.  2017-04-02 15:50:17 +0000    10772 byte  type/schema.js.flow</tspan>
+<tspan x="10" y="1146"> 71.  2017-04-02 15:50:17 +0000     8282 byte  utilities/TypeInfo.js</tspan>
+<tspan x="10" y="1162"> 72.  2017-04-02 15:50:17 +0000     8250 byte  utilities/TypeInfo.js.flow</tspan>
+<tspan x="10" y="1178"> 73.  2017-04-02 15:50:17 +0000     1919 byte  utilities/assertValidName.js</tspan>
+<tspan x="10" y="1194"> 74.  2017-04-02 15:50:17 +0000     1879 byte  utilities/assertValidName.js.flow</tspan>
+<tspan x="10" y="1210"> 75.  2017-04-02 15:50:17 +0000     5525 byte  utilities/astFromValue.js</tspan>
+<tspan x="10" y="1226"> 76.  2017-04-02 15:50:17 +0000     5106 byte  utilities/astFromValue.js.flow</tspan>
+<tspan x="10" y="1242"> 77.  2017-04-02 15:50:17 +0000    14529 byte  utilities/buildASTSchema.js</tspan>
+<tspan x="10" y="1258"> 78.  2017-04-02 15:50:17 +0000    14960 byte  utilities/buildASTSchema.js.flow</tspan>
+<tspan x="10" y="1274"> 79.  2017-04-02 15:50:17 +0000    11788 byte  utilities/buildClientSchema.js</tspan>
+<tspan x="10" y="1290"> 80.  2017-04-02 15:50:17 +0000    12222 byte  utilities/buildClientSchema.js.flow</tspan>
+<tspan x="10" y="1306"> 81.  2017-04-02 15:50:17 +0000      974 byte  utilities/concatAST.js</tspan>
+<tspan x="10" y="1322"> 82.  2017-04-02 15:50:17 +0000      977 byte  utilities/concatAST.js.flow</tspan>
+<tspan x="10" y="1338"> 83.  2017-04-02 15:50:17 +0000    18827 byte  utilities/extendSchema.js</tspan>
+<tspan x="10" y="1354"> 84.  2017-04-02 15:50:17 +0000    19064 byte  utilities/extendSchema.js.flow</tspan>
+<tspan x="10" y="1370"> 85.  2017-04-02 15:50:17 +0000    10911 byte  utilities/findBreakingChanges.js</tspan>
+<tspan x="10" y="1386"> 86.  2017-04-02 15:50:17 +0000    11296 byte  utilities/findBreakingChanges.js.flow</tspan>
+<tspan x="10" y="1402"> 87.  2017-04-02 15:50:17 +0000     1935 byte  utilities/findDeprecatedUsages.js</tspan>
+<tspan x="10" y="1418"> 88.  2017-04-02 15:50:17 +0000     1931 byte  utilities/findDeprecatedUsages.js.flow</tspan>
+<tspan x="10" y="1434"> 89.  2017-04-02 15:50:17 +0000     1357 byte  utilities/getOperationAST.js</tspan>
+<tspan x="10" y="1450"> 90.  2017-04-02 15:50:17 +0000     1398 byte  utilities/getOperationAST.js.flow</tspan>
+<tspan x="10" y="1466"> 91.  2017-04-02 15:50:17 +0000     4430 byte  utilities/index.js</tspan>
+<tspan x="10" y="1482"> 92.  2017-04-02 15:50:17 +0000     2936 byte  utilities/index.js.flow</tspan>
+<tspan x="10" y="1498"> 93.  2017-04-02 15:50:17 +0000     1981 byte  utilities/introspectionQuery.js</tspan>
+<tspan x="10" y="1514"> 94.  2017-04-02 15:50:17 +0000     4387 byte  utilities/introspectionQuery.js.flow</tspan>
+<tspan x="10" y="1530"> 95.  2017-04-02 15:50:17 +0000     3836 byte  utilities/isValidJSValue.js</tspan>
+<tspan x="10" y="1546"> 96.  2017-04-02 15:50:17 +0000     3060 byte  utilities/isValidJSValue.js.flow</tspan>
+<tspan x="10" y="1562"> 97.  2017-04-02 15:50:17 +0000     4217 byte  utilities/isValidLiteralValue.js</tspan>
+<tspan x="10" y="1578"> 98.  2017-04-02 15:50:17 +0000     3627 byte  utilities/isValidLiteralValue.js.flow</tspan>
+<tspan x="10" y="1594"> 99.  2017-04-02 15:50:17 +0000     8872 byte  utilities/schemaPrinter.js</tspan>
+<tspan x="10" y="1610">100.  2017-04-02 15:50:17 +0000     8637 byte  utilities/schemaPrinter.js.flow</tspan>
+<tspan x="10" y="1626">101.  2017-04-02 15:50:17 +0000     3091 byte  utilities/separateOperations.js</tspan>
+<tspan x="10" y="1642">102.  2017-04-02 15:50:17 +0000     3155 byte  utilities/separateOperations.js.flow</tspan>
+<tspan x="10" y="1658">103.  2017-04-02 15:50:17 +0000     4315 byte  utilities/typeComparators.js</tspan>
+<tspan x="10" y="1674">104.  2017-04-02 15:50:17 +0000     4431 byte  utilities/typeComparators.js.flow</tspan>
+<tspan x="10" y="1690">105.  2017-04-02 15:50:17 +0000     1260 byte  utilities/typeFromAST.js</tspan>
+<tspan x="10" y="1706">106.  2017-04-02 15:50:17 +0000     1250 byte  utilities/typeFromAST.js.flow</tspan>
+<tspan x="10" y="1722">107.  2017-04-02 15:50:17 +0000     6036 byte  utilities/valueFromAST.js</tspan>
+<tspan x="10" y="1738">108.  2017-04-02 15:50:17 +0000     5502 byte  utilities/valueFromAST.js.flow</tspan>
+<tspan x="10" y="1754">109.  2017-04-02 15:50:17 +0000      593 byte  validation/index.js</tspan>
+<tspan x="10" y="1770">110.  2017-04-02 15:50:17 +0000      416 byte  validation/index.js.flow</tspan>
+<tspan x="10" y="1786">111.  2017-04-02 15:50:17 +0000     1538 byte  validation/rules/ArgumentsOfCorrectType.js</tspan>
+<tspan x="10" y="1802">112.  2017-04-02 15:50:17 +0000     1627 byte  validation/rules/ArgumentsOfCorrectType.js.flow</tspan>
+<tspan x="10" y="1818">113.  2017-04-02 15:50:17 +0000     2490 byte  validation/rules/DefaultValuesOfCorrectType.js</tspan>
+<tspan x="10" y="1834">114.  2017-04-02 15:50:17 +0000     2438 byte  validation/rules/DefaultValuesOfCorrectType.js.fl\</tspan>
 <tspan x="10" y="1850">ow</tspan>
-<tspan x="10" y="1866">115.  2017-04-02 15:27:13 +0000     4794 byte  validation/rules/FieldsOnCorrectType.js</tspan>
-<tspan x="10" y="1882">116.  2017-04-02 15:27:13 +0000     4774 byte  validation/rules/FieldsOnCorrectType.js.flow</tspan>
-<tspan x="10" y="1898">117.  2017-04-02 15:27:13 +0000     2275 byte  validation/rules/FragmentsOnCompositeTypes.js</tspan>
-<tspan x="10" y="1914">118.  2017-04-02 15:27:13 +0000     2124 byte  validation/rules/FragmentsOnCompositeTypes.js.flo\</tspan>
+<tspan x="10" y="1866">115.  2017-04-02 15:50:17 +0000     4794 byte  validation/rules/FieldsOnCorrectType.js</tspan>
+<tspan x="10" y="1882">116.  2017-04-02 15:50:17 +0000     4774 byte  validation/rules/FieldsOnCorrectType.js.flow</tspan>
+<tspan x="10" y="1898">117.  2017-04-02 15:50:17 +0000     2275 byte  validation/rules/FragmentsOnCompositeTypes.js</tspan>
+<tspan x="10" y="1914">118.  2017-04-02 15:50:17 +0000     2124 byte  validation/rules/FragmentsOnCompositeTypes.js.flo\</tspan>
 <tspan x="10" y="1930">w</tspan>
-<tspan x="10" y="1946">119.  2017-04-02 15:27:13 +0000     3411 byte  validation/rules/KnownArgumentNames.js</tspan>
-<tspan x="10" y="1962">120.  2017-04-02 15:27:13 +0000     3190 byte  validation/rules/KnownArgumentNames.js.flow</tspan>
-<tspan x="10" y="1978">121.  2017-04-02 15:27:13 +0000     4094 byte  validation/rules/KnownDirectives.js</tspan>
-<tspan x="10" y="1994">122.  2017-04-02 15:27:13 +0000     3813 byte  validation/rules/KnownDirectives.js.flow</tspan>
-<tspan x="10" y="2010">123.  2017-04-02 15:27:13 +0000     1137 byte  validation/rules/KnownFragmentNames.js</tspan>
-<tspan x="10" y="2026">124.  2017-04-02 15:27:13 +0000     1075 byte  validation/rules/KnownFragmentNames.js.flow</tspan>
-<tspan x="10" y="2042">125.  2017-04-02 15:27:13 +0000     2254 byte  validation/rules/KnownTypeNames.js</tspan>
-<tspan x="10" y="2058">126.  2017-04-02 15:27:13 +0000     1898 byte  validation/rules/KnownTypeNames.js.flow</tspan>
-<tspan x="10" y="2074">127.  2017-04-02 15:27:13 +0000     1416 byte  validation/rules/LoneAnonymousOperation.js</tspan>
-<tspan x="10" y="2090">128.  2017-04-02 15:27:13 +0000     1281 byte  validation/rules/LoneAnonymousOperation.js.flow</tspan>
-<tspan x="10" y="2106">129.  2017-04-02 15:27:13 +0000     2691 byte  validation/rules/NoFragmentCycles.js</tspan>
-<tspan x="10" y="2122">130.  2017-04-02 15:27:13 +0000     2713 byte  validation/rules/NoFragmentCycles.js.flow</tspan>
-<tspan x="10" y="2138">131.  2017-04-02 15:27:13 +0000     1721 byte  validation/rules/NoUndefinedVariables.js</tspan>
-<tspan x="10" y="2154">132.  2017-04-02 15:27:13 +0000     1657 byte  validation/rules/NoUndefinedVariables.js.flow</tspan>
-<tspan x="10" y="2170">133.  2017-04-02 15:27:13 +0000     1781 byte  validation/rules/NoUnusedFragments.js</tspan>
-<tspan x="10" y="2186">134.  2017-04-02 15:27:13 +0000     1674 byte  validation/rules/NoUnusedFragments.js.flow</tspan>
-<tspan x="10" y="2202">135.  2017-04-02 15:27:13 +0000     1861 byte  validation/rules/NoUnusedVariables.js</tspan>
-<tspan x="10" y="2218">136.  2017-04-02 15:27:13 +0000     1753 byte  validation/rules/NoUnusedVariables.js.flow</tspan>
-<tspan x="10" y="2234">137.  2017-04-02 15:27:13 +0000    24205 byte  validation/rules/OverlappingFieldsCanBeMerged.js</tspan>
-<tspan x="10" y="2250">138.  2017-04-02 15:27:13 +0000    25863 byte  validation/rules/OverlappingFieldsCanBeMerged.js.\</tspan>
+<tspan x="10" y="1946">119.  2017-04-02 15:50:17 +0000     3411 byte  validation/rules/KnownArgumentNames.js</tspan>
+<tspan x="10" y="1962">120.  2017-04-02 15:50:17 +0000     3190 byte  validation/rules/KnownArgumentNames.js.flow</tspan>
+<tspan x="10" y="1978">121.  2017-04-02 15:50:17 +0000     4094 byte  validation/rules/KnownDirectives.js</tspan>
+<tspan x="10" y="1994">122.  2017-04-02 15:50:17 +0000     3813 byte  validation/rules/KnownDirectives.js.flow</tspan>
+<tspan x="10" y="2010">123.  2017-04-02 15:50:17 +0000     1137 byte  validation/rules/KnownFragmentNames.js</tspan>
+<tspan x="10" y="2026">124.  2017-04-02 15:50:17 +0000     1075 byte  validation/rules/KnownFragmentNames.js.flow</tspan>
+<tspan x="10" y="2042">125.  2017-04-02 15:50:17 +0000     2254 byte  validation/rules/KnownTypeNames.js</tspan>
+<tspan x="10" y="2058">126.  2017-04-02 15:50:17 +0000     1898 byte  validation/rules/KnownTypeNames.js.flow</tspan>
+<tspan x="10" y="2074">127.  2017-04-02 15:50:17 +0000     1416 byte  validation/rules/LoneAnonymousOperation.js</tspan>
+<tspan x="10" y="2090">128.  2017-04-02 15:50:17 +0000     1281 byte  validation/rules/LoneAnonymousOperation.js.flow</tspan>
+<tspan x="10" y="2106">129.  2017-04-02 15:50:17 +0000     2691 byte  validation/rules/NoFragmentCycles.js</tspan>
+<tspan x="10" y="2122">130.  2017-04-02 15:50:17 +0000     2713 byte  validation/rules/NoFragmentCycles.js.flow</tspan>
+<tspan x="10" y="2138">131.  2017-04-02 15:50:17 +0000     1721 byte  validation/rules/NoUndefinedVariables.js</tspan>
+<tspan x="10" y="2154">132.  2017-04-02 15:50:17 +0000     1657 byte  validation/rules/NoUndefinedVariables.js.flow</tspan>
+<tspan x="10" y="2170">133.  2017-04-02 15:50:17 +0000     1781 byte  validation/rules/NoUnusedFragments.js</tspan>
+<tspan x="10" y="2186">134.  2017-04-02 15:50:17 +0000     1674 byte  validation/rules/NoUnusedFragments.js.flow</tspan>
+<tspan x="10" y="2202">135.  2017-04-02 15:50:17 +0000     1861 byte  validation/rules/NoUnusedVariables.js</tspan>
+<tspan x="10" y="2218">136.  2017-04-02 15:50:17 +0000     1753 byte  validation/rules/NoUnusedVariables.js.flow</tspan>
+<tspan x="10" y="2234">137.  2017-04-02 15:50:17 +0000    24205 byte  validation/rules/OverlappingFieldsCanBeMerged.js</tspan>
+<tspan x="10" y="2250">138.  2017-04-02 15:50:17 +0000    25863 byte  validation/rules/OverlappingFieldsCanBeMerged.js.\</tspan>
 <tspan x="10" y="2266">flow</tspan>
-<tspan x="10" y="2282">139.  2017-04-02 15:27:13 +0000     2553 byte  validation/rules/PossibleFragmentSpreads.js</tspan>
-<tspan x="10" y="2298">140.  2017-04-02 15:27:13 +0000     2494 byte  validation/rules/PossibleFragmentSpreads.js.flow</tspan>
-<tspan x="10" y="2314">141.  2017-04-02 15:27:13 +0000     2976 byte  validation/rules/ProvidedNonNullArguments.js</tspan>
-<tspan x="10" y="2330">142.  2017-04-02 15:27:13 +0000     2841 byte  validation/rules/ProvidedNonNullArguments.js.flow</tspan>
-<tspan x="10" y="2346">143.  2017-04-02 15:27:13 +0000     1768 byte  validation/rules/ScalarLeafs.js</tspan>
-<tspan x="10" y="2362">144.  2017-04-02 15:27:13 +0000     1838 byte  validation/rules/ScalarLeafs.js.flow</tspan>
-<tspan x="10" y="2378">145.  2017-04-02 15:27:13 +0000     1365 byte  validation/rules/UniqueArgumentNames.js</tspan>
-<tspan x="10" y="2394">146.  2017-04-02 15:27:13 +0000     1275 byte  validation/rules/UniqueArgumentNames.js.flow</tspan>
-<tspan x="10" y="2410">147.  2017-04-02 15:27:13 +0000     1682 byte  validation/rules/UniqueDirectivesPerLocation.js</tspan>
-<tspan x="10" y="2426">148.  2017-04-02 15:27:13 +0000     1558 byte  validation/rules/UniqueDirectivesPerLocation.js.f\</tspan>
+<tspan x="10" y="2282">139.  2017-04-02 15:50:17 +0000     2553 byte  validation/rules/PossibleFragmentSpreads.js</tspan>
+<tspan x="10" y="2298">140.  2017-04-02 15:50:17 +0000     2494 byte  validation/rules/PossibleFragmentSpreads.js.flow</tspan>
+<tspan x="10" y="2314">141.  2017-04-02 15:50:17 +0000     2976 byte  validation/rules/ProvidedNonNullArguments.js</tspan>
+<tspan x="10" y="2330">142.  2017-04-02 15:50:17 +0000     2841 byte  validation/rules/ProvidedNonNullArguments.js.flow</tspan>
+<tspan x="10" y="2346">143.  2017-04-02 15:50:17 +0000     1768 byte  validation/rules/ScalarLeafs.js</tspan>
+<tspan x="10" y="2362">144.  2017-04-02 15:50:17 +0000     1838 byte  validation/rules/ScalarLeafs.js.flow</tspan>
+<tspan x="10" y="2378">145.  2017-04-02 15:50:17 +0000     1365 byte  validation/rules/UniqueArgumentNames.js</tspan>
+<tspan x="10" y="2394">146.  2017-04-02 15:50:17 +0000     1275 byte  validation/rules/UniqueArgumentNames.js.flow</tspan>
+<tspan x="10" y="2410">147.  2017-04-02 15:50:17 +0000     1682 byte  validation/rules/UniqueDirectivesPerLocation.js</tspan>
+<tspan x="10" y="2426">148.  2017-04-02 15:50:17 +0000     1558 byte  validation/rules/UniqueDirectivesPerLocation.js.f\</tspan>
 <tspan x="10" y="2442">low</tspan>
-<tspan x="10" y="2458">149.  2017-04-02 15:27:13 +0000     1370 byte  validation/rules/UniqueFragmentNames.js</tspan>
-<tspan x="10" y="2474">150.  2017-04-02 15:27:13 +0000     1243 byte  validation/rules/UniqueFragmentNames.js.flow</tspan>
-<tspan x="10" y="2490">151.  2017-04-02 15:27:13 +0000     1503 byte  validation/rules/UniqueInputFieldNames.js</tspan>
-<tspan x="10" y="2506">152.  2017-04-02 15:27:13 +0000     1398 byte  validation/rules/UniqueInputFieldNames.js.flow</tspan>
-<tspan x="10" y="2522">153.  2017-04-02 15:27:13 +0000     1471 byte  validation/rules/UniqueOperationNames.js</tspan>
-<tspan x="10" y="2538">154.  2017-04-02 15:27:13 +0000     1346 byte  validation/rules/UniqueOperationNames.js.flow</tspan>
-<tspan x="10" y="2554">155.  2017-04-02 15:27:13 +0000     1396 byte  validation/rules/UniqueVariableNames.js</tspan>
-<tspan x="10" y="2570">156.  2017-04-02 15:27:13 +0000     1381 byte  validation/rules/UniqueVariableNames.js.flow</tspan>
-<tspan x="10" y="2586">157.  2017-04-02 15:27:13 +0000     1559 byte  validation/rules/VariablesAreInputTypes.js</tspan>
-<tspan x="10" y="2602">158.  2017-04-02 15:27:13 +0000     1541 byte  validation/rules/VariablesAreInputTypes.js.flow</tspan>
-<tspan x="10" y="2618">159.  2017-04-02 15:27:13 +0000     2692 byte  validation/rules/VariablesInAllowedPosition.js</tspan>
-<tspan x="10" y="2634">160.  2017-04-02 15:27:13 +0000     2623 byte  validation/rules/VariablesInAllowedPosition.js.fl\</tspan>
+<tspan x="10" y="2458">149.  2017-04-02 15:50:17 +0000     1370 byte  validation/rules/UniqueFragmentNames.js</tspan>
+<tspan x="10" y="2474">150.  2017-04-02 15:50:17 +0000     1243 byte  validation/rules/UniqueFragmentNames.js.flow</tspan>
+<tspan x="10" y="2490">151.  2017-04-02 15:50:17 +0000     1503 byte  validation/rules/UniqueInputFieldNames.js</tspan>
+<tspan x="10" y="2506">152.  2017-04-02 15:50:17 +0000     1398 byte  validation/rules/UniqueInputFieldNames.js.flow</tspan>
+<tspan x="10" y="2522">153.  2017-04-02 15:50:17 +0000     1471 byte  validation/rules/UniqueOperationNames.js</tspan>
+<tspan x="10" y="2538">154.  2017-04-02 15:50:17 +0000     1346 byte  validation/rules/UniqueOperationNames.js.flow</tspan>
+<tspan x="10" y="2554">155.  2017-04-02 15:50:17 +0000     1396 byte  validation/rules/UniqueVariableNames.js</tspan>
+<tspan x="10" y="2570">156.  2017-04-02 15:50:17 +0000     1381 byte  validation/rules/UniqueVariableNames.js.flow</tspan>
+<tspan x="10" y="2586">157.  2017-04-02 15:50:17 +0000     1559 byte  validation/rules/VariablesAreInputTypes.js</tspan>
+<tspan x="10" y="2602">158.  2017-04-02 15:50:17 +0000     1541 byte  validation/rules/VariablesAreInputTypes.js.flow</tspan>
+<tspan x="10" y="2618">159.  2017-04-02 15:50:17 +0000     2692 byte  validation/rules/VariablesInAllowedPosition.js</tspan>
+<tspan x="10" y="2634">160.  2017-04-02 15:50:17 +0000     2623 byte  validation/rules/VariablesInAllowedPosition.js.fl\</tspan>
 <tspan x="10" y="2650">ow</tspan>
-<tspan x="10" y="2666">161.  2017-04-02 15:27:13 +0000     4652 byte  validation/specifiedRules.js</tspan>
-<tspan x="10" y="2682">162.  2017-04-02 15:27:13 +0000     4078 byte  validation/specifiedRules.js.flow</tspan>
-<tspan x="10" y="2698">163.  2017-04-02 15:27:13 +0000     8303 byte  validation/validate.js</tspan>
-<tspan x="10" y="2714">164.  2017-04-02 15:27:13 +0000     8027 byte  validation/validate.js.flow</tspan>
-<tspan x="10" y="2730">165.  2017-04-02 15:27:13 +0000    85943 byte  yarn.lock</tspan>
-<tspan x="10" y="2746">166.  2017-04-02 15:27:13 +0000   929537 byte  .</tspan>
+<tspan x="10" y="2666">161.  2017-04-02 15:50:17 +0000     4652 byte  validation/specifiedRules.js</tspan>
+<tspan x="10" y="2682">162.  2017-04-02 15:50:17 +0000     4078 byte  validation/specifiedRules.js.flow</tspan>
+<tspan x="10" y="2698">163.  2017-04-02 15:50:17 +0000     8303 byte  validation/validate.js</tspan>
+<tspan x="10" y="2714">164.  2017-04-02 15:50:17 +0000     8027 byte  validation/validate.js.flow</tspan>
+<tspan x="10" y="2730">165.  2017-04-02 15:50:17 +0000    85943 byte  yarn.lock</tspan>
+<tspan x="10" y="2746">166.  2017-04-02 15:50:17 +0000   929537 byte  .</tspan>
 </text>
 </svg>
