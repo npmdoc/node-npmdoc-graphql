@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/graphql/graphql-js"
-
-    >graphql (v0.9.3)</a>
+    <a href="https://github.com/graphql/graphql-js">graphql (v0.9.3)</a>
 </h1>
 <h4>A Query Language and Runtime which can target any service.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.graphql">module graphql</a><ol>
 
@@ -2085,10 +2078,10 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function graphql(schema, requestString, rootValue, contextValue, variableValues, operationName) {
   return new Promise(function (resolve) {
-    var source = new _source.Source(requestString || &#x27;&#x27;, &#x27;GraphQL request&#x27;);
+    var source = new _source.Source(requestString || '', 'GraphQL request');
     var documentAST = (0, _parser.parse)(source);
     var validationErrors = (0, _validate.validate)(schema, documentAST);
-    if (validationErrors.length &#x3e; 0) {
+    if (validationErrors.length &gt; 0) {
       resolve({ errors: validationErrors });
     } else {
       resolve((0, _execute.execute)(schema, documentAST, rootValue, contextValue, variableValues, operationName));
@@ -2112,9 +2105,9 @@
     <li>description and source-code<pre class="apidocCodePre">function GraphQLDirective(config) {
   _classCallCheck(this, GraphQLDirective);
 
-  (0, _invariant2.default)(config.name, &#x27;Directive must be named.&#x27;);
+  (0, _invariant2.default)(config.name, 'Directive must be named.');
   (0, _assertValidName.assertValidName)(config.name);
-  (0, _invariant2.default)(Array.isArray(config.locations), &#x27;Must provide locations for directive.&#x27;);
+  (0, _invariant2.default)(Array.isArray(config.locations), 'Must provide locations for directive.');
   this.name = config.name;
   this.description = config.description;
   this.locations = config.locations;
@@ -2123,12 +2116,12 @@
   if (!args) {
     this.args = [];
   } else {
-    (0, _invariant2.default)(!Array.isArray(args), &#x27;@&#x27; + config.name + &#x27; args must be an object with argument names as keys.&#x27;);
+    (0, _invariant2.default)(!Array.isArray(args), '@' + config.name + ' args must be an object with argument names as keys.');
     this.args = Object.keys(args).map(function (argName) {
       (0, _assertValidName.assertValidName)(argName);
       var arg = args[argName];
-      (0, _invariant2.default)((0, _definition.isInputType)(arg.type), &#x27;@&#x27; + config.name + &#x27;(&#x27; + argName + &#x27;:) argument type must
- be &#x27; + (&#x27;Input Type but got: &#x27; + String(arg.type) + &#x27;.&#x27;));
+      (0, _invariant2.default)((0, _definition.isInputType)(arg.type), '@' + config.name + '(' + argName + ':) argument type must
+ be ' + ('Input Type but got: ' + String(arg.type) + '.'));
       return {
         name: argName,
         description: arg.description === undefined ? null : arg.description,
@@ -2173,8 +2166,8 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function GraphQLError( // eslint-disable-line no-redeclare message, nodes, source, positions, path, originalError) {
   // Include (non-enumerable) stack trace.
-  if (originalError &#x26;&#x26; originalError.stack) {
-    Object.defineProperty(this, &#x27;stack&#x27;, {
+  if (originalError &amp;&amp; originalError.stack) {
+    Object.defineProperty(this, 'stack', {
       value: originalError.stack,
       writable: true,
       configurable: true
@@ -2182,7 +2175,7 @@
   } else if (Error.captureStackTrace) {
     Error.captureStackTrace(this, GraphQLError);
   } else {
-    Object.defineProperty(this, &#x27;stack&#x27;, {
+    Object.defineProperty(this, 'stack', {
       value: Error().stack,
       writable: true,
       configurable: true
@@ -2191,26 +2184,26 @@
 
   // Compute locations in the source for the given nodes/positions.
   var _source = source;
-  if (!_source &#x26;&#x26; nodes &#x26;&#x26; nodes.length &#x3e; 0) {
+  if (!_source &amp;&amp; nodes &amp;&amp; nodes.length &gt; 0) {
     var node = nodes[0];
-    _source = node &#x26;&#x26; node.loc &#x26;&#x26; node.loc.source;
+    _source = node &amp;&amp; node.loc &amp;&amp; node.loc.source;
   }
 
   var _positions = positions;
-  if (!_positions &#x26;&#x26; nodes) {
+  if (!_positions &amp;&amp; nodes) {
     _positions = nodes.filter(function (node) {
       return Boolean(node.loc);
     }).map(function (node) {
       return node.loc.start;
     });
   }
-  if (_positions &#x26;&#x26; _positions.length === 0) {
+  if (_positions &amp;&amp; _positions.length === 0) {
     _positions = undefined;
   }
 
   var _locations = void 0;
   var _source2 = _source; // seems here Flow need a const to resolve type.
-  if (_source2 &#x26;&#x26; _positions) {
+  if (_source2 &amp;&amp; _positions) {
     _locations = _positions.map(function (pos) {
       return (0, _location.getLocation)(_source2, pos);
     });
@@ -2296,7 +2289,7 @@
   this.name = config.name;
   this.description = config.description;
   if (config.resolveType) {
-    (0, _invariant2.default)(typeof config.resolveType === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;resolveType&#x22; as a function.&#x27;);
+    (0, _invariant2.default)(typeof config.resolveType === 'function', this.name + ' must provide "resolveType" as a function.');
   }
   this.resolveType = config.resolveType;
   this._typeConfig = config;
@@ -2316,7 +2309,7 @@
     <li>description and source-code<pre class="apidocCodePre">function GraphQLList(type) {
   _classCallCheck(this, GraphQLList);
 
-  (0, _invariant2.default)(isType(type), &#x27;Can only create List of a GraphQLType but got: &#x27; + String(type) + &#x27;.&#x27;);
+  (0, _invariant2.default)(isType(type), 'Can only create List of a GraphQLType but got: ' + String(type) + '.');
   this.ofType = type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2334,8 +2327,8 @@
     <li>description and source-code<pre class="apidocCodePre">function GraphQLNonNull(type) {
   _classCallCheck(this, GraphQLNonNull);
 
-  (0, _invariant2.default)(isType(type) &#x26;&#x26; !(type instanceof GraphQLNonNull), &#x27;Can only create NonNull of a Nullable GraphQLType
- but got: &#x27; + (String(type) + &#x27;.&#x27;));
+  (0, _invariant2.default)(isType(type) &amp;&amp; !(type instanceof GraphQLNonNull), 'Can only create NonNull of a Nullable GraphQLType
+ but got: ' + (String(type) + '.'));
   this.ofType = type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2357,7 +2350,7 @@
   this.name = config.name;
   this.description = config.description;
   if (config.isTypeOf) {
-    (0, _invariant2.default)(typeof config.isTypeOf === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;isTypeOf&#x22; as a function.&#x27;);
+    (0, _invariant2.default)(typeof config.isTypeOf === 'function', this.name + ' must provide "isTypeOf" as a function.');
   }
   this.isTypeOf = config.isTypeOf;
   this._typeConfig = config;
@@ -2380,11 +2373,11 @@
   (0, _assertValidName.assertValidName)(config.name);
   this.name = config.name;
   this.description = config.description;
-  (0, _invariant2.default)(typeof config.serialize === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;serialize&#x22; function. If this custom
- Scalar &#x27; + &#x27;is also used as an input type, ensure &#x22;parseValue&#x22; and &#x22;parseLiteral&#x22; &#x27; + &#x27;functions are also provided.&#x27;);
+  (0, _invariant2.default)(typeof config.serialize === 'function', this.name + ' must provide "serialize" function. If this custom
+ Scalar ' + 'is also used as an input type, ensure "parseValue" and "parseLiteral" ' + 'functions are also provided.');
   if (config.parseValue || config.parseLiteral) {
-    (0, _invariant2.default)(typeof config.parseValue === &#x27;function&#x27; &#x26;&#x26; typeof config.parseLiteral === &#x27;function&#x27;, this.name + &#x27;
-must provide both &#x22;parseValue&#x22; and &#x22;parseLiteral&#x22; &#x27; + &#x27;functions.&#x27;);
+    (0, _invariant2.default)(typeof config.parseValue === 'function' &amp;&amp; typeof config.parseLiteral === 'function', this.name + '
+must provide both "parseValue" and "parseLiteral" ' + 'functions.');
   }
   this._scalarConfig = config;
 }</pre></li>
@@ -2405,27 +2398,27 @@ must provide both &#x22;parseValue&#x22; and &#x22;parseLiteral&#x22; &#x27; + &
 
   _classCallCheck(this, GraphQLSchema);
 
-  (0, _invariant2.default)(typeof config === &#x27;object&#x27;, &#x27;Must provide configuration object.&#x27;);
+  (0, _invariant2.default)(typeof config === 'object', 'Must provide configuration object.');
 
-  (0, _invariant2.default)(config.query instanceof _definition.GraphQLObjectType, &#x27;Schema query must be Object Type but got: &#x27; +
-String(config.query) + &#x27;.&#x27;);
+  (0, _invariant2.default)(config.query instanceof _definition.GraphQLObjectType, 'Schema query must be Object Type but got: ' +
+String(config.query) + '.');
   this._queryType = config.query;
 
-  (0, _invariant2.default)(!config.mutation || config.mutation instanceof _definition.GraphQLObjectType, &#x27;Schema mutation must be
- Object Type if provided but got: &#x27; + String(config.mutation) + &#x27;.&#x27;);
+  (0, _invariant2.default)(!config.mutation || config.mutation instanceof _definition.GraphQLObjectType, 'Schema mutation must be
+ Object Type if provided but got: ' + String(config.mutation) + '.');
   this._mutationType = config.mutation;
 
-  (0, _invariant2.default)(!config.subscription || config.subscription instanceof _definition.GraphQLObjectType, &#x27;Schema subscription
- must be Object Type if provided but got: &#x27; + String(config.subscription) + &#x27;.&#x27;);
+  (0, _invariant2.default)(!config.subscription || config.subscription instanceof _definition.GraphQLObjectType, 'Schema subscription
+ must be Object Type if provided but got: ' + String(config.subscription) + '.');
   this._subscriptionType = config.subscription;
 
-  (0, _invariant2.default)(!config.types || Array.isArray(config.types), &#x27;Schema types must be Array if provided but got: &#x27; + String
-(config.types) + &#x27;.&#x27;);
+  (0, _invariant2.default)(!config.types || Array.isArray(config.types), 'Schema types must be Array if provided but got: ' + String
+(config.types) + '.');
 
-  (0, _invariant2.default)(!config.directives || Array.isArray(config.directives) &#x26;&#x26; config.directives.every(function (directive
+  (0, _invariant2.default)(!config.directives || Array.isArray(config.directives) &amp;&amp; config.directives.every(function (directive
 ) {
     return directive instanceof _directives.GraphQLDirective;
-  }), &#x27;Schema directives must be Array&#x3c;GraphQLDirective&#x3e; if provided but got: &#x27; + String(config.directives) + &#x27;.&#x27;);
+  }), 'Schema directives must be Array&lt;GraphQLDirective&gt; if provided but got: ' + String(config.directives) + '.');
   // Provide specified directives (e.g. @include and @skip) by default.
   this._directives = config.directives || _directives.specifiedDirectives;
 
@@ -2484,7 +2477,7 @@ String(config.query) + &#x27;.&#x27;);
   this.name = config.name;
   this.description = config.description;
   if (config.resolveType) {
-    (0, _invariant2.default)(typeof config.resolveType === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;resolveType&#x22; as a function.&#x27;);
+    (0, _invariant2.default)(typeof config.resolveType === 'function', this.name + ' must provide "resolveType" as a function.');
   }
   this.resolveType = config.resolveType;
   this._typeConfig = config;
@@ -2505,7 +2498,7 @@ String(config.query) + &#x27;.&#x27;);
   _classCallCheck(this, Source);
 
   this.body = body;
-  this.name = name || &#x27;GraphQL&#x27;;
+  this.name = name || 'GraphQL';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2569,7 +2562,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertAbstractType(type) {
-  (0, _invariant2.default)(isAbstractType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL abstract type.&#x27;);
+  (0, _invariant2.default)(isAbstractType(type), 'Expected ' + String(type) + ' to be a GraphQL abstract type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2585,7 +2578,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertCompositeType(type) {
-  (0, _invariant2.default)(isCompositeType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL composite type.&#x27;);
+  (0, _invariant2.default)(isCompositeType(type), 'Expected ' + String(type) + ' to be a GraphQL composite type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2601,7 +2594,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertInputType(type) {
-  (0, _invariant2.default)(isInputType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL input type.&#x27;);
+  (0, _invariant2.default)(isInputType(type), 'Expected ' + String(type) + ' to be a GraphQL input type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2617,7 +2610,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertLeafType(type) {
-  (0, _invariant2.default)(isLeafType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL leaf type.&#x27;);
+  (0, _invariant2.default)(isLeafType(type), 'Expected ' + String(type) + ' to be a GraphQL leaf type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2633,7 +2626,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertNamedType(type) {
-  (0, _invariant2.default)(isNamedType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL named type.&#x27;);
+  (0, _invariant2.default)(isNamedType(type), 'Expected ' + String(type) + ' to be a GraphQL named type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2649,7 +2642,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertOutputType(type) {
-  (0, _invariant2.default)(isOutputType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL output type.&#x27;);
+  (0, _invariant2.default)(isOutputType(type), 'Expected ' + String(type) + ' to be a GraphQL output type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2665,7 +2658,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertType(type) {
-  (0, _invariant2.default)(isType(type), &#x27;Expected &#x27; + String(type) + &#x27; to be a GraphQL type.&#x27;);
+  (0, _invariant2.default)(isType(type), 'Expected ' + String(type) + ' to be a GraphQL type.');
   return type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2681,21 +2674,21 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertValidName(name, isIntrospection) {
-  if (!name || typeof name !== &#x27;string&#x27;) {
-    throw new Error(&#x27;Must be named. Unexpected name: &#x27; + name + &#x27;.&#x27;);
+  if (!name || typeof name !== 'string') {
+    throw new Error('Must be named. Unexpected name: ' + name + '.');
   }
-  if (!isIntrospection &#x26;&#x26; name.slice(0, 2) === &#x27;__&#x27; &#x26;&#x26; !hasWarnedAboutDunder) {
+  if (!isIntrospection &amp;&amp; name.slice(0, 2) === '__' &amp;&amp; !hasWarnedAboutDunder) {
     hasWarnedAboutDunder = true;
 <span class="apidocCodeCommentSpan">    /* eslint-disable no-console */
-</span>    if (console &#x26;&#x26; console.warn) {
-      var error = new Error(&#x27;Name &#x22;&#x27; + name + &#x27;&#x22; must not begin with &#x22;__&#x22;, which is reserved by &#x27; + &#x27;GraphQL introspection. In a
- future release of graphql this will &#x27; + &#x27;become a hard error.&#x27;);
+</span>    if (console &amp;&amp; console.warn) {
+      var error = new Error('Name "' + name + '" must not begin with "__", which is reserved by ' + 'GraphQL introspection. In a
+ future release of graphql this will ' + 'become a hard error.');
       console.warn(formatWarning(error));
     }
     /* eslint-enable no-console */
   }
   if (!NAME_RX.test(name)) {
-    throw new Error(&#x27;Names must match /^[_a-zA-Z][_a-zA-Z0-9]*$/ but &#x22;&#x27; + name + &#x27;&#x22; does not.&#x27;);
+    throw new Error('Names must match /^[_a-zA-Z][_a-zA-Z0-9]*$/ but "' + name + '" does not.');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2716,7 +2709,7 @@ String(config.query) + &#x27;.&#x27;);
 
   if (type instanceof _definition.GraphQLNonNull) {
     var astValue = astFromValue(_value, type.ofType);
-    if (astValue &#x26;&#x26; astValue.kind === _kinds.NULL) {
+    if (astValue &amp;&amp; astValue.kind === _kinds.NULL) {
       return null;
     }
     return astValue;
@@ -2733,7 +2726,7 @@ String(config.query) + &#x27;.&#x27;);
   }
 
   // Convert JavaScript array to GraphQL list. If the GraphQLType is a list, but
-  // the value is not an array, convert the value using the list&#x27;s item type.
+  // the value is not an array, convert the value using the list's item type.
   if (type instanceof _definition.GraphQLList) {
     var itemType = type.ofType;
     if ((0, _iterall.isCollection)(_value)) {
@@ -2752,7 +2745,7 @@ String(config.query) + &#x27;.&#x27;);
   // Populate the fields of the input object by creating ASTs from each value
   // in the JavaScript object according to the fields in the input type.
   if (type instanceof _definition.GraphQLInputObjectType) {
-    if (_value === null || typeof _value !== &#x27;object&#x27;) {
+    if (_value === null || typeof _value !== 'object') {
       return null;
     }
     var fields = type.getFields();
@@ -2771,8 +2764,8 @@ String(config.query) + &#x27;.&#x27;);
     return { kind: _kinds.OBJECT, fields: fieldNodes };
   }
 
-  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, &#x27;Must provide
- Input Type, cannot use: &#x27; + String(type));
+  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, 'Must provide
+ Input Type, cannot use: ' + String(type));
 
   // Since value is an internally represented value, it must be serialized
   // to an externally represented value before converting into an AST.
@@ -2782,25 +2775,25 @@ String(config.query) + &#x27;.&#x27;);
   }
 
   // Others serialize based on their corresponding JavaScript scalar types.
-  if (typeof serialized === &#x27;boolean&#x27;) {
+  if (typeof serialized === 'boolean') {
     return { kind: _kinds.BOOLEAN, value: serialized };
   }
 
   // JavaScript numbers can be Int or Float values.
-  if (typeof serialized === &#x27;number&#x27;) {
+  if (typeof serialized === 'number') {
     var stringNum = String(serialized);
     return (/^[0-9]+$/.test(stringNum) ? { kind: _kinds.INT, value: stringNum } : { kind: _kinds.FLOAT, value: stringNum }
     );
   }
 
-  if (typeof serialized === &#x27;string&#x27;) {
+  if (typeof serialized === 'string') {
     // Enum types use Enum literals.
     if (type instanceof _definition.GraphQLEnumType) {
       return { kind: _kinds.ENUM, value: serialized };
     }
 
     // ID types can use Int literals.
-    if (type === _scalars.GraphQLID &#x26;&#x26; /^[0-9]+$/.test(serialized)) {
+    if (type === _scalars.GraphQLID &amp;&amp; /^[0-9]+$/.test(serialized)) {
       return { kind: _kinds.INT, value: serialized };
     }
 
@@ -2812,7 +2805,7 @@ String(config.query) + &#x27;.&#x27;);
     };
   }
 
-  throw new TypeError(&#x27;Cannot convert value to AST: &#x27; + String(serialized));
+  throw new TypeError('Cannot convert value to AST: ' + String(serialized));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2828,7 +2821,7 @@ String(config.query) + &#x27;.&#x27;);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function buildASTSchema(ast) {
   if (!ast || ast.kind !== _kinds.DOCUMENT) {
-    throw new Error(&#x27;Must provide a document ast.&#x27;);
+    throw new Error('Must provide a document ast.');
   }
 
   var schemaDef = void 0;
@@ -2836,12 +2829,12 @@ String(config.query) + &#x27;.&#x27;);
   var typeDefs = [];
   var nodeMap = Object.create(null);
   var directiveDefs = [];
-  for (var i = 0; i &#x3c; ast.definitions.length; i++) {
+  for (var i = 0; i &lt; ast.definitions.length; i++) {
     var d = ast.definitions[i];
     switch (d.kind) {
       case _kinds.SCHEMA_DEFINITION:
         if (schemaDef) {
-          throw new Error(&#x27;Must provide only one schema definition.&#x27;);
+          throw new Error('Must provide only one schema definition.');
         }
         schemaDef = d;
         break;
@@ -2866,46 +2859,46 @@ String(config.query) + &#x27;.&#x27;);
   if (schemaDef) {
     schemaDef.operationTypes.forEach(function (operationType) {
       var typeName = operationType.type.name.value;
-      if (operationType.operation === &#x27;query&#x27;) {
+      if (operationType.operation === 'query') {
         if (queryTypeName) {
-          throw new Error(&#x27;Must provide only one query type in schema.&#x27;);
+          throw new Error('Must provide only one query type in schema.');
         }
         if (!nodeMap[typeName]) {
-          throw new Error(&#x27;Specified query type &#x22;&#x27; + typeName + &#x27;&#x22; not found in document.&#x27;);
+          throw new Error('Specified query type "' + typeName + '" not found in document.');
         }
         queryTypeName = typeName;
-      } else if (operationType.operation === &#x27;mutation&#x27;) {
+      } else if (operationType.operation === 'mutation') {
         if (mutationTypeName) {
-          throw new Error(&#x27;Must provide only one mutation type in schema.&#x27;);
+          throw new Error('Must provide only one mutation type in schema.');
         }
         if (!nodeMap[typeName]) {
-          throw new Error(&#x27;Specified mutation type &#x22;&#x27; + typeName + &#x27;&#x22; not found in document.&#x27;);
+          throw new Error('Specified mutation type "' + typeName + '" not found in document.');
         }
         mutationTypeName = typeName;
-      } else if (operationType.operation === &#x27;subscription&#x27;) {
+      } else if (operationType.operation === 'subscription') {
         if (subscriptionTypeName) {
-          throw new Error(&#x27;Must provide only one subscription type in schema.&#x27;);
+          throw new Error('Must provide only one subscription type in schema.');
         }
         if (!nodeMap[typeName]) {
-          throw new Error(&#x27;Specified subscription type &#x22;&#x27; + typeName + &#x27;&#x22; not found in document.&#x27;);
+          throw new Error('Specified subscription type "' + typeName + '" not found in document.');
         }
         subscriptionTypeName = typeName;
       }
     });
   } else {
     if (nodeMap.Query) {
-      queryTypeName = &#x27;Query&#x27;;
+      queryTypeName = 'Query';
     }
     if (nodeMap.Mutation) {
-      mutationTypeName = &#x27;Mutation&#x27;;
+      mutationTypeName = 'Mutation';
     }
     if (nodeMap.Subscription) {
-      subscriptionTypeName = &#x27;Subscription&#x27;;
+      subscriptionTypeName = 'Subscription';
     }
   }
 
   if (!queryTypeName) {
-    throw new Error(&#x27;Must provide schema definition with query type or a type named Query.&#x27;);
+    throw new Error('Must provide schema definition with query type or a type named Query.');
   }
 
   var innerTypeMap = {
@@ -2932,19 +2925,19 @@ String(config.query) + &#x27;.&#x27;);
 
   // If specified directives were not explicitly declared, add them.
   if (!directives.some(function (directive) {
-    return directive.name === &#x27;skip&#x27;;
+    return directive.name === 'skip';
   })) {
     directives.push(_directives.GraphQLSkipDirective);
   }
 
   if (!directives.some(function (directive) {
-    return directive.name === &#x27;include&#x27;;
+    return directive.name === 'include';
   })) {
     directives.push(_directives.GraphQLIncludeDirective);
   }
 
   if (!directives.some(function (directive) {
-    return directive.name === &#x27;deprecated&#x27;;
+    return directive.name === 'deprecated';
   })) {
     directives.push(_directives.GraphQLDeprecatedDirective);
   }
@@ -3000,17 +2993,17 @@ String(config.query) + &#x27;.&#x27;);
     if (typeRef.kind === _introspection.TypeKind.LIST) {
       var itemRef = typeRef.ofType;
       if (!itemRef) {
-        throw new Error(&#x27;Decorated type deeper than introspection query.&#x27;);
+        throw new Error('Decorated type deeper than introspection query.');
       }
       return new _definition.GraphQLList(getType(itemRef));
     }
     if (typeRef.kind === _introspection.TypeKind.NON_NULL) {
       var nullableRef = typeRef.ofType;
       if (!nullableRef) {
-        throw new Error(&#x27;Decorated type deeper than introspection query.&#x27;);
+        throw new Error('Decorated type deeper than introspection query.');
       }
       var nullableType = getType(nullableRef);
-      (0, _invariant2.default)(!(nullableType instanceof _definition.GraphQLNonNull), &#x27;No nesting nonnull.&#x27;);
+      (0, _invariant2.default)(!(nullableType instanceof _definition.GraphQLNonNull), 'No nesting nonnull.');
       return new _definition.GraphQLNonNull(nullableType);
     }
     return getNamedType(typeRef.name);
@@ -3022,8 +3015,8 @@ String(config.query) + &#x27;.&#x27;);
     }
     var typeIntrospection = typeIntrospectionMap[typeName];
     if (!typeIntrospection) {
-      throw new Error(&#x27;Invalid or incomplete schema, unknown type: &#x27; + typeName + &#x27;. Ensure &#x27; + &#x27;that a full introspection query
- is used in order to build a &#x27; + &#x27;client schema.&#x27;);
+      throw new Error('Invalid or incomplete schema, unknown type: ' + typeName + '. Ensure ' + 'that a full introspection query
+ is used in order to build a ' + 'client schema.');
     }
     var typeDef = buildType(typeIntrospection);
     typeDefCache[typeName] = typeDef;
@@ -3032,31 +3025,31 @@ String(config.query) + &#x27;.&#x27;);
 
   function getInputType(typeRef) {
     var type = getType(typeRef);
-    (0, _invariant2.default)((0, _definition.isInputType)(type), &#x27;Introspection must provide input type for arguments.&#x27;);
+    (0, _invariant2.default)((0, _definition.isInputType)(type), 'Introspection must provide input type for arguments.');
     return type;
   }
 
   function getOutputType(typeRef) {
     var type = getType(typeRef);
-    (0, _invariant2.default)((0, _definition.isOutputType)(type), &#x27;Introspection must provide output type for fields.&#x27;);
+    (0, _invariant2.default)((0, _definition.isOutputType)(type), 'Introspection must provide output type for fields.');
     return type;
   }
 
   function getObjectType(typeRef) {
     var type = getType(typeRef);
-    (0, _invariant2.default)(type instanceof _definition.GraphQLObjectType, &#x27;Introspection must provide object type for possibleTypes
-.&#x27;);
+    (0, _invariant2.default)(type instanceof _definition.GraphQLObjectType, 'Introspection must provide object type for possibleTypes
+.');
     return type;
   }
 
   function getInterfaceType(typeRef) {
     var type = getType(typeRef);
-    (0, _invariant2.default)(type instanceof _definition.GraphQLInterfaceType, &#x27;Introspection must provide interface type for interfaces
-.&#x27;);
+    (0, _invariant2.default)(type instanceof _definition.GraphQLInterfaceType, 'Introspection must provide interface type for interfaces
+.');
     return type;
   }
 
-  // Given a type&#x27;s introspection result, construct the correct
+  // Given a type's introspection result, construct the correct
   // GraphQLType instance.
   function buildType(type) {
     switch (type.kind) {
@@ -3103,14 +3096,14 @@ String(config.query) + &#x27;.&#x27;);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function concatAST(asts) {
   var batchDefinitions = [];
-  for (var i = 0; i &#x3c; asts.length; i++) {
+  for (var i = 0; i &lt; asts.length; i++) {
     var definitions = asts[i].definitions;
-    for (var j = 0; j &#x3c; definitions.length; j++) {
+    for (var j = 0; j &lt; definitions.length; j++) {
       batchDefinitions.push(definitions[j]);
     }
   }
   return {
-    kind: &#x27;Document&#x27;,
+    kind: 'Document',
     definitions: batchDefinitions
   };
 }</pre></li>
@@ -3128,9 +3121,9 @@ String(config.query) + &#x27;.&#x27;);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function defaultFieldResolver(source, args, context, info) {
   // ensure source is a value for which property access is acceptable.
-  if (typeof source === &#x27;object&#x27; || typeof source === &#x27;function&#x27;) {
+  if (typeof source === 'object' || typeof source === 'function') {
     var property = source[info.fieldName];
-    if (typeof property === &#x27;function&#x27;) {
+    if (typeof property === 'function') {
       return source[info.fieldName](args, context, info);
     }
     return property;
@@ -3190,21 +3183,21 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function execute(schema, document, rootValue, contextValue, variableValues, operationName) {
-  (0, _invariant2.default)(schema, &#x27;Must provide schema&#x27;);
-  (0, _invariant2.default)(document, &#x27;Must provide document&#x27;);
-  (0, _invariant2.default)(schema instanceof _schema.GraphQLSchema, &#x27;Schema must be an instance of GraphQLSchema. Also ensure that
- there are &#x27; + &#x27;not multiple versions of GraphQL installed in your node_modules directory.&#x27;);
+  (0, _invariant2.default)(schema, 'Must provide schema');
+  (0, _invariant2.default)(document, 'Must provide document');
+  (0, _invariant2.default)(schema instanceof _schema.GraphQLSchema, 'Schema must be an instance of GraphQLSchema. Also ensure that
+ there are ' + 'not multiple versions of GraphQL installed in your node_modules directory.');
 
   // Variables, if provided, must be an object.
-  (0, _invariant2.default)(!variableValues || typeof variableValues === &#x27;object&#x27;, &#x27;Variables must be provided as an Object where
- each property is a &#x27; + &#x27;variable value. Perhaps look to see if an unparsed JSON string &#x27; + &#x27;was provided.&#x27;);
+  (0, _invariant2.default)(!variableValues || typeof variableValues === 'object', 'Variables must be provided as an Object where
+ each property is a ' + 'variable value. Perhaps look to see if an unparsed JSON string ' + 'was provided.');
 
   // If a valid context cannot be created due to incorrect arguments,
   // this will throw an error.
   var context = buildExecutionContext(schema, document, rootValue, contextValue, variableValues, operationName);
 
   // Return a Promise that will eventually resolve to the data described by
-  // The &#x22;Response&#x22; section of the GraphQL specification.
+  // The "Response" section of the GraphQL specification.
   //
   // If errors are encountered while executing a GraphQL field, only that
   // field and its descendants will be omitted, and sibling fields will still
@@ -3238,19 +3231,19 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function extendSchema(schema, documentAST) {
-  (0, _invariant2.default)(schema instanceof _schema.GraphQLSchema, &#x27;Must provide valid GraphQLSchema&#x27;);
+  (0, _invariant2.default)(schema instanceof _schema.GraphQLSchema, 'Must provide valid GraphQLSchema');
 
-  (0, _invariant2.default)(documentAST &#x26;&#x26; documentAST.kind === _kinds.DOCUMENT, &#x27;Must provide valid Document AST&#x27;);
+  (0, _invariant2.default)(documentAST &amp;&amp; documentAST.kind === _kinds.DOCUMENT, 'Must provide valid Document AST');
 
   // Collect the type definitions and extensions found in the document.
   var typeDefinitionMap = {};
   var typeExtensionsMap = {};
 
   // New directives and types are separate because a directives and types can
-  // have the same name. For example, a type named &#x22;skip&#x22;.
+  // have the same name. For example, a type named "skip".
   var directiveDefinitions = [];
 
-  for (var i = 0; i &#x3c; documentAST.definitions.length; i++) {
+  for (var i = 0; i &lt; documentAST.definitions.length; i++) {
     var def = documentAST.definitions[i];
     switch (def.kind) {
       case _kinds.OBJECT_TYPE_DEFINITION:
@@ -3260,25 +3253,25 @@ String(config.query) + &#x27;.&#x27;);
       case _kinds.SCALAR_TYPE_DEFINITION:
       case _kinds.INPUT_OBJECT_TYPE_DEFINITION:
         // Sanity check that none of the defined types conflict with the
-        // schema&#x27;s existing types.
+        // schema's existing types.
         var typeName = def.name.value;
         if (schema.getType(typeName)) {
-          throw new _GraphQLError.GraphQLError(&#x27;Type &#x22;&#x27; + typeName + &#x27;&#x22; already exists in the schema. It cannot also &#x27; + &#x27;be defined
- in this type definition.&#x27;, [def]);
+          throw new _GraphQLError.GraphQLError('Type "' + typeName + '" already exists in the schema. It cannot also ' + 'be defined
+ in this type definition.', [def]);
         }
         typeDefinitionMap[typeName] = def;
         break;
       case _kinds.TYPE_EXTENSION_DEFINITION:
         // Sanity check that this type extension exists within the
-        // schema&#x27;s existing types.
+        // schema's existing types.
         var extendedTypeName = def.definition.name.value;
         var existingType = schema.getType(extendedTypeName);
         if (!existingType) {
-          throw new _GraphQLError.GraphQLError(&#x27;Cannot extend type &#x22;&#x27; + extendedTypeName + &#x27;&#x22; because it does not &#x27; + &#x27;exist in
-the existing schema.&#x27;, [def.definition]);
+          throw new _GraphQLError.GraphQLError('Cannot extend type "' + extendedTypeName + '" because it does not ' + 'exist in
+the existing schema.', [def.definition]);
         }
         if (!(existingType instanceof _definition.GraphQLObjectType)) {
-          throw new _GraphQLError.GraphQLError(&#x27;Cannot extend non-object type &#x22;&#x27; + extendedTypeName + &#x27;&#x22;.&#x27;, [def.definition]);
+          throw new _GraphQLError.GraphQLError('Cannot extend non-object type "' + extendedTypeName + '".', [def.definition]);
         }
         var extensions = typeExtensionsMap[extendedTypeName];
         if (extensions) {
@@ -3292,8 +3285,8 @@ the existing schema.&#x27;, [def.definition]);
         var directiveName = def.name.value;
         var existingDirective = schema.getDirective(directiveName);
         if (existingDirective) {
-          throw new _GraphQLError.GraphQLError(&#x27;Directive &#x22;&#x27; + directiveName + &#x27;&#x22; already exists in the schema. It &#x27; + &#x27;cannot be
- redefined.&#x27;, [def]);
+          throw new _GraphQLError.GraphQLError('Directive "' + directiveName + '" already exists in the schema. It ' + 'cannot be
+ redefined.', [def]);
         }
         directiveDefinitions.push(def);
         break;
@@ -3302,7 +3295,7 @@ the existing schema.&#x27;, [def.definition]);
 
   // If this document contains no new types, extensions, or directives then
   // return the same unmodified GraphQLSchema instance.
-  if (Object.keys(typeExtensionsMap).length === 0 &#x26;&#x26; Object.keys(typeDefinitionMap).length === 0 &#x26;&#x26; directiveDefinitions.length ===
+  if (Object.keys(typeExtensionsMap).length === 0 &amp;&amp; Object.keys(typeDefinitionMap).length === 0 &amp;&amp; directiveDefinitions.length ===
 0) {
     return schema;
   }
@@ -3368,23 +3361,23 @@ the existing schema.&#x27;, [def.definition]);
   (0, _visitor.visit)(ast, (0, _visitor.visitWithTypeInfo)(typeInfo, {
     Field: function Field(node) {
       var fieldDef = typeInfo.getFieldDef();
-      if (fieldDef &#x26;&#x26; fieldDef.isDeprecated) {
+      if (fieldDef &amp;&amp; fieldDef.isDeprecated) {
         var parentType = typeInfo.getParentType();
         if (parentType) {
           var reason = fieldDef.deprecationReason;
-          errors.push(new _GraphQLError.GraphQLError(&#x27;The field &#x27; + parentType.name + &#x27;.&#x27; + fieldDef.name + &#x27; is deprecated.&#x27; + (
-reason ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
+          errors.push(new _GraphQLError.GraphQLError('The field ' + parentType.name + '.' + fieldDef.name + ' is deprecated.' + (
+reason ? ' ' + reason : ''), [node]));
         }
       }
     },
     EnumValue: function EnumValue(node) {
       var enumVal = typeInfo.getEnumValue();
-      if (enumVal &#x26;&#x26; enumVal.isDeprecated) {
+      if (enumVal &amp;&amp; enumVal.isDeprecated) {
         var type = (0, _definition.getNamedType)(typeInfo.getInputType());
         if (type) {
           var reason = enumVal.deprecationReason;
-          errors.push(new _GraphQLError.GraphQLError(&#x27;The enum value &#x27; + type.name + &#x27;.&#x27; + enumVal.name + &#x27; is deprecated.&#x27; + (reason
- ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
+          errors.push(new _GraphQLError.GraphQLError('The enum value ' + type.name + '.' + enumVal.name + ' is deprecated.' + (reason
+ ? ' ' + reason : ''), [node]));
         }
       }
     }
@@ -3405,7 +3398,7 @@ reason ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function formatError(error) {
-  (0, _invariant2.default)(error, &#x27;Received null or undefined error.&#x27;);
+  (0, _invariant2.default)(error, 'Received null or undefined error.');
   return {
     message: error.message,
     locations: error.locations,
@@ -3429,7 +3422,7 @@ reason ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
   var line = 1;
   var column = position + 1;
   var match = void 0;
-  while ((match = lineRegexp.exec(source.body)) &#x26;&#x26; match.index &#x3c; position) {
+  while ((match = lineRegexp.exec(source.body)) &amp;&amp; match.index &lt; position) {
     line += 1;
     column = position + 1 - (match.index + match[0].length);
   }
@@ -3483,7 +3476,7 @@ reason ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getOperationAST(documentAST, operationName) {
   var operation = null;
-  for (var i = 0; i &#x3c; documentAST.definitions.length; i++) {
+  for (var i = 0; i &lt; documentAST.definitions.length; i++) {
     var definition = documentAST.definitions[i];
     if (definition.kind === _kinds.OPERATION_DEFINITION) {
       if (!operationName) {
@@ -3494,7 +3487,7 @@ reason ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
           return null;
         }
         operation = definition;
-      } else if (definition.name &#x26;&#x26; definition.name.value === operationName) {
+      } else if (definition.name &amp;&amp; definition.name.value === operationName) {
         return definition;
       }
     }
@@ -3550,12 +3543,12 @@ reason ? &#x27; &#x27; + reason : &#x27;&#x27;), [node]));
   }
 
   // If either type is non-null, the other must also be non-null.
-  if (typeA instanceof _definition.GraphQLNonNull &#x26;&#x26; typeB instanceof _definition.GraphQLNonNull) {
+  if (typeA instanceof _definition.GraphQLNonNull &amp;&amp; typeB instanceof _definition.GraphQLNonNull) {
     return isEqualType(typeA.ofType, typeB.ofType);
   }
 
   // If either type is a list, the other must also be a list.
-  if (typeA instanceof _definition.GraphQLList &#x26;&#x26; typeB instanceof _definition.GraphQLList) {
+  if (typeA instanceof _definition.GraphQLList &amp;&amp; typeB instanceof _definition.GraphQLList) {
     return isEqualType(typeA.ofType, typeB.ofType);
   }
 
@@ -3686,7 +3679,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
 
   // If superType type is an abstract type, maybeSubType type may be a currently
   // possible object type.
-  if ((0, _definition.isAbstractType)(superType) &#x26;&#x26; maybeSubType instanceof _definition.GraphQLObjectType &#x26;&#x26; schema.isPossibleType
+  if ((0, _definition.isAbstractType)(superType) &amp;&amp; maybeSubType instanceof _definition.GraphQLObjectType &amp;&amp; schema.isPossibleType
 (superType, maybeSubType)) {
     return true;
   }
@@ -3710,7 +3703,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
   // A value must be provided if the type is non-null.
   if (type instanceof _definition.GraphQLNonNull) {
     if ((0, _isNullish2.default)(value)) {
-      return [&#x27;Expected &#x22;&#x27; + String(type) + &#x27;&#x22;, found null.&#x27;];
+      return ['Expected "' + String(type) + '", found null.'];
     }
     return isValidJSValue(value, type.ofType);
   }
@@ -3726,7 +3719,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       var errors = [];
       (0, _iterall.forEach)(value, function (item, index) {
         errors.push.apply(errors, isValidJSValue(item, itemType).map(function (error) {
-          return &#x27;In element #&#x27; + index + &#x27;: &#x27; + error;
+          return 'In element #' + index + ': ' + error;
         }));
       });
       return errors;
@@ -3736,8 +3729,8 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
 
   // Input objects check each defined field.
   if (type instanceof _definition.GraphQLInputObjectType) {
-    if (typeof value !== &#x27;object&#x27; || value === null) {
-      return [&#x27;Expected &#x22;&#x27; + type.name + &#x27;&#x22;, found not an object.&#x27;];
+    if (typeof value !== 'object' || value === null) {
+      return ['Expected "' + type.name + '", found not an object.'];
     }
     var fields = type.getFields();
 
@@ -3746,7 +3739,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     // Ensure every provided field is defined.
     Object.keys(value).forEach(function (providedField) {
       if (!fields[providedField]) {
-        _errors.push(&#x27;In field &#x22;&#x27; + providedField + &#x27;&#x22;: Unknown field.&#x27;);
+        _errors.push('In field "' + providedField + '": Unknown field.');
       }
     });
 
@@ -3754,25 +3747,25 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     Object.keys(fields).forEach(function (fieldName) {
       var newErrors = isValidJSValue(value[fieldName], fields[fieldName].type);
       _errors.push.apply(_errors, newErrors.map(function (error) {
-        return &#x27;In field &#x22;&#x27; + fieldName + &#x27;&#x22;: &#x27; + error;
+        return 'In field "' + fieldName + '": ' + error;
       }));
     });
 
     return _errors;
   }
 
-  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, &#x27;Must be
- input type&#x27;);
+  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, 'Must be
+ input type');
 
   // Scalar/Enum input checks to ensure the type can parse the value to
   // a non-null value.
   try {
     var parseResult = type.parseValue(value);
     if ((0, _isNullish2.default)(parseResult)) {
-      return [&#x27;Expected type &#x22;&#x27; + type.name + &#x27;&#x22;, found &#x27; + JSON.stringify(value) + &#x27;.&#x27;];
+      return ['Expected type "' + type.name + '", found ' + JSON.stringify(value) + '.'];
     }
   } catch (error) {
-    return [&#x27;Expected type &#x22;&#x27; + type.name + &#x27;&#x22;, found &#x27; + JSON.stringify(value) + &#x27;: &#x27; + error.message];
+    return ['Expected type "' + type.name + '", found ' + JSON.stringify(value) + ': ' + error.message];
   }
 
   return [];
@@ -3793,7 +3786,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
   // A value must be provided if the type is non-null.
   if (type instanceof _definition.GraphQLNonNull) {
     if (!valueNode || valueNode.kind === _kinds.NULL) {
-      return [&#x27;Expected &#x22;&#x27; + String(type) + &#x27;&#x22;, found null.&#x27;];
+      return ['Expected "' + String(type) + '", found null.'];
     }
     return isValidLiteralValue(type.ofType, valueNode);
   }
@@ -3815,7 +3808,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       return valueNode.values.reduce(function (acc, item, index) {
         var errors = isValidLiteralValue(itemType, item);
         return acc.concat(errors.map(function (error) {
-          return &#x27;In element #&#x27; + index + &#x27;: &#x27; + error;
+          return 'In element #' + index + ': ' + error;
         }));
       }, []);
     }
@@ -3825,7 +3818,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
   // Input objects check each defined field and look for undefined fields.
   if (type instanceof _definition.GraphQLInputObjectType) {
     if (valueNode.kind !== _kinds.OBJECT) {
-      return [&#x27;Expected &#x22;&#x27; + type.name + &#x27;&#x22;, found not an object.&#x27;];
+      return ['Expected "' + type.name + '", found not an object.'];
     }
     var fields = type.getFields();
 
@@ -3835,7 +3828,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     var fieldNodes = valueNode.fields;
     fieldNodes.forEach(function (providedFieldNode) {
       if (!fields[providedFieldNode.name.value]) {
-        errors.push(&#x27;In field &#x22;&#x27; + providedFieldNode.name.value + &#x27;&#x22;: Unknown field.&#x27;);
+        errors.push('In field "' + providedFieldNode.name.value + '": Unknown field.');
       }
     });
 
@@ -3844,23 +3837,23 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       return fieldNode.name.value;
     });
     Object.keys(fields).forEach(function (fieldName) {
-      var result = isValidLiteralValue(fields[fieldName].type, fieldNodeMap[fieldName] &#x26;&#x26; fieldNodeMap[fieldName].value);
+      var result = isValidLiteralValue(fields[fieldName].type, fieldNodeMap[fieldName] &amp;&amp; fieldNodeMap[fieldName].value);
       errors.push.apply(errors, result.map(function (error) {
-        return &#x27;In field &#x22;&#x27; + fieldName + &#x27;&#x22;: &#x27; + error;
+        return 'In field "' + fieldName + '": ' + error;
       }));
     });
 
     return errors;
   }
 
-  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, &#x27;Must be
- input type&#x27;);
+  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, 'Must be
+ input type');
 
   // Scalar/Enum input checks to ensure the type can parse the value to
   // a non-null value.
   var parseResult = type.parseLiteral(valueNode);
   if ((0, _isNullish2.default)(parseResult)) {
-    return [&#x27;Expected type &#x22;&#x27; + type.name + &#x27;&#x22;, found &#x27; + (0, _printer.print)(valueNode) + &#x27;.&#x27;];
+    return ['Expected type "' + type.name + '", found ' + (0, _printer.print)(valueNode) + '.'];
   }
 
   return [];
@@ -3878,7 +3871,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parse(source, options) {
-  var sourceObj = typeof source === &#x27;string&#x27; ? new _source.Source(source) : source;
+  var sourceObj = typeof source === 'string' ? new _source.Source(source) : source;
   var lexer = (0, _lexer.createLexer)(sourceObj, options || {});
   return parseDocument(lexer);
 }</pre></li>
@@ -3895,7 +3888,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseType(source, options) {
-  var sourceObj = typeof source === &#x27;string&#x27; ? new _source.Source(source) : source;
+  var sourceObj = typeof source === 'string' ? new _source.Source(source) : source;
   var lexer = (0, _lexer.createLexer)(sourceObj, options || {});
   expect(lexer, _lexer.TokenKind.SOF);
   var type = parseTypeReference(lexer);
@@ -3915,7 +3908,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseValue(source, options) {
-  var sourceObj = typeof source === &#x27;string&#x27; ? new _source.Source(source) : source;
+  var sourceObj = typeof source === 'string' ? new _source.Source(source) : source;
   var lexer = (0, _lexer.createLexer)(sourceObj, options || {});
   expect(lexer, _lexer.TokenKind.SOF);
   var value = parseValueLiteral(lexer, false);
@@ -4060,7 +4053,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     });
 
     separatedDocumentASTs[operationName] = {
-      kind: &#x27;Document&#x27;,
+      kind: 'Document',
       definitions: definitions
     };
   });
@@ -4083,13 +4076,13 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
   var innerType = void 0;
   if (typeNode.kind === _kinds.LIST_TYPE) {
     innerType = typeFromAST(schema, typeNode.type);
-    return innerType &#x26;&#x26; new _definition.GraphQLList(innerType);
+    return innerType &amp;&amp; new _definition.GraphQLList(innerType);
   }
   if (typeNode.kind === _kinds.NON_NULL_TYPE) {
     innerType = typeFromAST(schema, typeNode.type);
-    return innerType &#x26;&#x26; new _definition.GraphQLNonNull(innerType);
+    return innerType &amp;&amp; new _definition.GraphQLNonNull(innerType);
   }
-  (0, _invariant2.default)(typeNode.kind === _kinds.NAMED_TYPE, &#x27;Must be a named type.&#x27;);
+  (0, _invariant2.default)(typeNode.kind === _kinds.NAMED_TYPE, 'Must be a named type.');
   return schema.getType(typeNode.name.value);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -4105,10 +4098,10 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function validate(schema, ast, rules) {
-  (0, _invariant2.default)(schema, &#x27;Must provide schema&#x27;);
-  (0, _invariant2.default)(ast, &#x27;Must provide document&#x27;);
-  (0, _invariant2.default)(schema instanceof _schema.GraphQLSchema, &#x27;Schema must be an instance of GraphQLSchema. Also ensure that
- there are &#x27; + &#x27;not multiple versions of GraphQL installed in your node_modules directory.&#x27;);
+  (0, _invariant2.default)(schema, 'Must provide schema');
+  (0, _invariant2.default)(ast, 'Must provide document');
+  (0, _invariant2.default)(schema instanceof _schema.GraphQLSchema, 'Schema must be an instance of GraphQLSchema. Also ensure that
+ there are ' + 'not multiple versions of GraphQL installed in your node_modules directory.');
   var typeInfo = new _TypeInfo.TypeInfo(schema);
   return visitUsingRules(schema, typeInfo, ast, rules || _specifiedRules.specifiedRules);
 }</pre></li>
@@ -4149,7 +4142,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       // No valid return value.
       return;
     }
-    // Note: we&#x27;re not doing any checking that this variable is correct. We&#x27;re
+    // Note: we're not doing any checking that this variable is correct. We're
     // assuming that this query has been validated and the variable usage here
     // is of the correct type.
     return variables[variableName];
@@ -4160,7 +4153,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     if (valueNode.kind === Kind.LIST) {
       var coercedValues = [];
       var itemNodes = valueNode.values;
-      for (var i = 0; i &#x3c; itemNodes.length; i++) {
+      for (var i = 0; i &lt; itemNodes.length; i++) {
         if (isMissingVariable(itemNodes[i], variables)) {
           // If an array contains a missing variable, it is either coerced to
           // null or if the item type is non-null, it considered invalid.
@@ -4195,7 +4188,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       return field.name.value;
     });
     var fieldNames = Object.keys(fields);
-    for (var _i = 0; _i &#x3c; fieldNames.length; _i++) {
+    for (var _i = 0; _i &lt; fieldNames.length; _i++) {
       var fieldName = fieldNames[_i];
       var field = fields[fieldName];
       var fieldNode = fieldNodes[fieldName];
@@ -4216,8 +4209,8 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     return coercedObj;
   }
 
-  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, &#x27;Must be
- input type&#x27;);
+  (0, _invariant2.default)(type instanceof _definition.GraphQLScalarType || type instanceof _definition.GraphQLEnumType, 'Must be
+ input type');
 
   var parsed = type.parseLiteral(valueNode);
   if ((0, _isNullish2.default)(parsed)) {
@@ -4258,7 +4251,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     var isLeaving = index === keys.length;
     var key = void 0;
     var node = void 0;
-    var isEdited = isLeaving &#x26;&#x26; edits.length !== 0;
+    var isEdited = isLeaving &amp;&amp; edits.length !== 0;
     if (isLeaving) {
       key = ancestors.length === 0 ? undefined : path.pop();
       node = parent;
@@ -4276,13 +4269,13 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
           node = clone;
         }
         var editOffset = 0;
-        for (var ii = 0; ii &#x3c; edits.length; ii++) {
+        for (var ii = 0; ii &lt; edits.length; ii++) {
           var editKey = edits[ii][0];
           var editValue = edits[ii][1];
           if (inArray) {
             editKey -= editOffset;
           }
-          if (inArray &#x26;&#x26; editValue === null) {
+          if (inArray &amp;&amp; editValue === null) {
             node.splice(editKey, 1);
             editOffset++;
           } else {
@@ -4309,7 +4302,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     var result = void 0;
     if (!Array.isArray(node)) {
       if (!isNode(node)) {
-        throw new Error(&#x27;Invalid AST Node: &#x27; + JSON.stringify(node));
+        throw new Error('Invalid AST Node: ' + JSON.stringify(node));
       }
       var visitFn = getVisitFn(visitor, node.kind, isLeaving);
       if (visitFn) {
@@ -4338,7 +4331,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       }
     }
 
-    if (result === undefined &#x26;&#x26; isEdited) {
+    if (result === undefined &amp;&amp; isEdited) {
       edits.push([key, node]);
     }
 
@@ -4378,7 +4371,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
 
   return {
     enter: function enter(node) {
-      for (var i = 0; i &#x3c; visitors.length; i++) {
+      for (var i = 0; i &lt; visitors.length; i++) {
         if (!skipping[i]) {
           var fn = getVisitFn(visitors[i], node.kind, /* isLeaving */false);
           if (fn) {
@@ -4395,14 +4388,14 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
       }
     },
     leave: function leave(node) {
-      for (var i = 0; i &#x3c; visitors.length; i++) {
+      for (var i = 0; i &lt; visitors.length; i++) {
         if (!skipping[i]) {
           var fn = getVisitFn(visitors[i], node.kind, /* isLeaving */true);
           if (fn) {
             var result = fn.apply(visitors[i], arguments);
             if (result === BREAK) {
               skipping[i] = BREAK;
-            } else if (result !== undefined &#x26;&#x26; result !== false) {
+            } else if (result !== undefined &amp;&amp; result !== false) {
               return result;
             }
           }
@@ -4683,7 +4676,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseValue(value) /* T */{
-  if (typeof value === &#x27;string&#x27;) {
+  if (typeof value === 'string') {
     var enumValue = this._getNameLookup()[value];
     if (enumValue) {
       return enumValue.value;
@@ -4755,8 +4748,8 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function GraphQLError( // eslint-disable-line no-redeclare message, nodes, source, positions, path, originalError) {
   // Include (non-enumerable) stack trace.
-  if (originalError &#x26;&#x26; originalError.stack) {
-    Object.defineProperty(this, &#x27;stack&#x27;, {
+  if (originalError &amp;&amp; originalError.stack) {
+    Object.defineProperty(this, 'stack', {
       value: originalError.stack,
       writable: true,
       configurable: true
@@ -4764,7 +4757,7 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
   } else if (Error.captureStackTrace) {
     Error.captureStackTrace(this, GraphQLError);
   } else {
-    Object.defineProperty(this, &#x27;stack&#x27;, {
+    Object.defineProperty(this, 'stack', {
       value: Error().stack,
       writable: true,
       configurable: true
@@ -4773,26 +4766,26 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
 
   // Compute locations in the source for the given nodes/positions.
   var _source = source;
-  if (!_source &#x26;&#x26; nodes &#x26;&#x26; nodes.length &#x3e; 0) {
+  if (!_source &amp;&amp; nodes &amp;&amp; nodes.length &gt; 0) {
     var node = nodes[0];
-    _source = node &#x26;&#x26; node.loc &#x26;&#x26; node.loc.source;
+    _source = node &amp;&amp; node.loc &amp;&amp; node.loc.source;
   }
 
   var _positions = positions;
-  if (!_positions &#x26;&#x26; nodes) {
+  if (!_positions &amp;&amp; nodes) {
     _positions = nodes.filter(function (node) {
       return Boolean(node.loc);
     }).map(function (node) {
       return node.loc.start;
     });
   }
-  if (_positions &#x26;&#x26; _positions.length === 0) {
+  if (_positions &amp;&amp; _positions.length === 0) {
     _positions = undefined;
   }
 
   var _locations = void 0;
   var _source2 = _source; // seems here Flow need a const to resolve type.
-  if (_source2 &#x26;&#x26; _positions) {
+  if (_source2 &amp;&amp; _positions) {
     _locations = _positions.map(function (pos) {
       return (0, _location.getLocation)(_source2, pos);
     });
@@ -4885,21 +4878,21 @@ instanceof GraphQLUnionType || type instanceof GraphQLEnumType || type instanceo
   var _this = this;
 
   var fieldMap = resolveThunk(this._typeConfig.fields);
-  (0, _invariant2.default)(isPlainObj(fieldMap), this.name + &#x27; fields must be an object with field names as keys or a &#x27; + &#x27;function
- which returns such an object.&#x27;);
+  (0, _invariant2.default)(isPlainObj(fieldMap), this.name + ' fields must be an object with field names as keys or a ' + 'function
+ which returns such an object.');
   var fieldNames = Object.keys(fieldMap);
-  (0, _invariant2.default)(fieldNames.length &#x3e; 0, this.name + &#x27; fields must be an object with field names as keys or a &#x27; + &#x27;function
- which returns such an object.&#x27;);
+  (0, _invariant2.default)(fieldNames.length &gt; 0, this.name + ' fields must be an object with field names as keys or a ' + 'function
+ which returns such an object.');
   var resultFieldMap = {};
   fieldNames.forEach(function (fieldName) {
     (0, _assertValidName.assertValidName)(fieldName);
     var field = _extends({}, fieldMap[fieldName], {
       name: fieldName
     });
-    (0, _invariant2.default)(isInputType(field.type), _this.name + &#x27;.&#x27; + fieldName + &#x27; field type must be Input Type but &#x27; + (&#x27;got
-: &#x27; + String(field.type) + &#x27;.&#x27;));
-    (0, _invariant2.default)(field.resolve == null, _this.name + &#x27;.&#x27; + fieldName + &#x27; field type has a resolve property, but &#x27; + &#x27;
-Input Types cannot define resolvers.&#x27;);
+    (0, _invariant2.default)(isInputType(field.type), _this.name + '.' + fieldName + ' field type must be Input Type but ' + ('got
+: ' + String(field.type) + '.'));
+    (0, _invariant2.default)(field.resolve == null, _this.name + '.' + fieldName + ' field type has a resolve property, but ' + '
+Input Types cannot define resolvers.');
     resultFieldMap[fieldName] = field;
   });
   return resultFieldMap;
@@ -4988,7 +4981,7 @@ Input Types cannot define resolvers.&#x27;);
   this.name = config.name;
   this.description = config.description;
   if (config.resolveType) {
-    (0, _invariant2.default)(typeof config.resolveType === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;resolveType&#x22; as a function.&#x27;);
+    (0, _invariant2.default)(typeof config.resolveType === 'function', this.name + ' must provide "resolveType" as a function.');
   }
   this.resolveType = config.resolveType;
   this._typeConfig = config;
@@ -5078,7 +5071,7 @@ Input Types cannot define resolvers.&#x27;);
     <li>description and source-code<pre class="apidocCodePre">function GraphQLList(type) {
   _classCallCheck(this, GraphQLList);
 
-  (0, _invariant2.default)(isType(type), &#x27;Can only create List of a GraphQLType but got: &#x27; + String(type) + &#x27;.&#x27;);
+  (0, _invariant2.default)(isType(type), 'Can only create List of a GraphQLType but got: ' + String(type) + '.');
   this.ofType = type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5099,7 +5092,7 @@ Input Types cannot define resolvers.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-  return &#x27;[&#x27; + String(this.ofType) + &#x27;]&#x27;;
+  return '[' + String(this.ofType) + ']';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5114,7 +5107,7 @@ Input Types cannot define resolvers.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-  return &#x27;[&#x27; + String(this.ofType) + &#x27;]&#x27;;
+  return '[' + String(this.ofType) + ']';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5129,7 +5122,7 @@ Input Types cannot define resolvers.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-  return &#x27;[&#x27; + String(this.ofType) + &#x27;]&#x27;;
+  return '[' + String(this.ofType) + ']';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5151,8 +5144,8 @@ Input Types cannot define resolvers.&#x27;);
     <li>description and source-code<pre class="apidocCodePre">function GraphQLNonNull(type) {
   _classCallCheck(this, GraphQLNonNull);
 
-  (0, _invariant2.default)(isType(type) &#x26;&#x26; !(type instanceof GraphQLNonNull), &#x27;Can only create NonNull of a Nullable GraphQLType
- but got: &#x27; + (String(type) + &#x27;.&#x27;));
+  (0, _invariant2.default)(isType(type) &amp;&amp; !(type instanceof GraphQLNonNull), 'Can only create NonNull of a Nullable GraphQLType
+ but got: ' + (String(type) + '.'));
   this.ofType = type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5173,7 +5166,7 @@ Input Types cannot define resolvers.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-  return this.ofType.toString() + &#x27;!&#x27;;
+  return this.ofType.toString() + '!';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5188,7 +5181,7 @@ Input Types cannot define resolvers.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-  return this.ofType.toString() + &#x27;!&#x27;;
+  return this.ofType.toString() + '!';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5203,7 +5196,7 @@ Input Types cannot define resolvers.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-  return this.ofType.toString() + &#x27;!&#x27;;
+  return this.ofType.toString() + '!';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5229,7 +5222,7 @@ Input Types cannot define resolvers.&#x27;);
   this.name = config.name;
   this.description = config.description;
   if (config.isTypeOf) {
-    (0, _invariant2.default)(typeof config.isTypeOf === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;isTypeOf&#x22; as a function.&#x27;);
+    (0, _invariant2.default)(typeof config.isTypeOf === 'function', this.name + ' must provide "isTypeOf" as a function.');
   }
   this.isTypeOf = config.isTypeOf;
   this._typeConfig = config;
@@ -5337,11 +5330,11 @@ Input Types cannot define resolvers.&#x27;);
   (0, _assertValidName.assertValidName)(config.name);
   this.name = config.name;
   this.description = config.description;
-  (0, _invariant2.default)(typeof config.serialize === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;serialize&#x22; function. If this custom
- Scalar &#x27; + &#x27;is also used as an input type, ensure &#x22;parseValue&#x22; and &#x22;parseLiteral&#x22; &#x27; + &#x27;functions are also provided.&#x27;);
+  (0, _invariant2.default)(typeof config.serialize === 'function', this.name + ' must provide "serialize" function. If this custom
+ Scalar ' + 'is also used as an input type, ensure "parseValue" and "parseLiteral" ' + 'functions are also provided.');
   if (config.parseValue || config.parseLiteral) {
-    (0, _invariant2.default)(typeof config.parseValue === &#x27;function&#x27; &#x26;&#x26; typeof config.parseLiteral === &#x27;function&#x27;, this.name + &#x27;
-must provide both &#x22;parseValue&#x22; and &#x22;parseLiteral&#x22; &#x27; + &#x27;functions.&#x27;);
+    (0, _invariant2.default)(typeof config.parseValue === 'function' &amp;&amp; typeof config.parseLiteral === 'function', this.name + '
+must provide both "parseValue" and "parseLiteral" ' + 'functions.');
   }
   this._scalarConfig = config;
 }</pre></li>
@@ -5465,27 +5458,27 @@ must provide both &#x22;parseValue&#x22; and &#x22;parseLiteral&#x22; &#x27; + &
 
   _classCallCheck(this, GraphQLSchema);
 
-  (0, _invariant2.default)(typeof config === &#x27;object&#x27;, &#x27;Must provide configuration object.&#x27;);
+  (0, _invariant2.default)(typeof config === 'object', 'Must provide configuration object.');
 
-  (0, _invariant2.default)(config.query instanceof _definition.GraphQLObjectType, &#x27;Schema query must be Object Type but got: &#x27; +
-String(config.query) + &#x27;.&#x27;);
+  (0, _invariant2.default)(config.query instanceof _definition.GraphQLObjectType, 'Schema query must be Object Type but got: ' +
+String(config.query) + '.');
   this._queryType = config.query;
 
-  (0, _invariant2.default)(!config.mutation || config.mutation instanceof _definition.GraphQLObjectType, &#x27;Schema mutation must be
- Object Type if provided but got: &#x27; + String(config.mutation) + &#x27;.&#x27;);
+  (0, _invariant2.default)(!config.mutation || config.mutation instanceof _definition.GraphQLObjectType, 'Schema mutation must be
+ Object Type if provided but got: ' + String(config.mutation) + '.');
   this._mutationType = config.mutation;
 
-  (0, _invariant2.default)(!config.subscription || config.subscription instanceof _definition.GraphQLObjectType, &#x27;Schema subscription
- must be Object Type if provided but got: &#x27; + String(config.subscription) + &#x27;.&#x27;);
+  (0, _invariant2.default)(!config.subscription || config.subscription instanceof _definition.GraphQLObjectType, 'Schema subscription
+ must be Object Type if provided but got: ' + String(config.subscription) + '.');
   this._subscriptionType = config.subscription;
 
-  (0, _invariant2.default)(!config.types || Array.isArray(config.types), &#x27;Schema types must be Array if provided but got: &#x27; + String
-(config.types) + &#x27;.&#x27;);
+  (0, _invariant2.default)(!config.types || Array.isArray(config.types), 'Schema types must be Array if provided but got: ' + String
+(config.types) + '.');
 
-  (0, _invariant2.default)(!config.directives || Array.isArray(config.directives) &#x26;&#x26; config.directives.every(function (directive
+  (0, _invariant2.default)(!config.directives || Array.isArray(config.directives) &amp;&amp; config.directives.every(function (directive
 ) {
     return directive instanceof _directives.GraphQLDirective;
-  }), &#x27;Schema directives must be Array&#x3c;GraphQLDirective&#x3e; if provided but got: &#x27; + String(config.directives) + &#x27;.&#x27;);
+  }), 'Schema directives must be Array&lt;GraphQLDirective&gt; if provided but got: ' + String(config.directives) + '.');
   // Provide specified directives (e.g. @include and @skip) by default.
   this._directives = config.directives || _directives.specifiedDirectives;
 
@@ -5676,8 +5669,8 @@ String(config.query) + &#x27;.&#x27;);
 
   if (!possibleTypeMap[abstractType.name]) {
     var possibleTypes = this.getPossibleTypes(abstractType);
-    (0, _invariant2.default)(Array.isArray(possibleTypes), &#x27;Could not find possible implementing types for &#x27; + abstractType.name
- + &#x27; &#x27; + &#x27;in schema. Check that schema.types is defined and is an array of &#x27; + &#x27;all possible types in the schema.&#x27;);
+    (0, _invariant2.default)(Array.isArray(possibleTypes), 'Could not find possible implementing types for ' + abstractType.name
+ + ' ' + 'in schema. Check that schema.types is defined and is an array of ' + 'all possible types in the schema.');
     possibleTypeMap[abstractType.name] = possibleTypes.reduce(function (map, type) {
       return map[type.name] = true, map;
     }, Object.create(null));
@@ -5709,7 +5702,7 @@ String(config.query) + &#x27;.&#x27;);
   this.name = config.name;
   this.description = config.description;
   if (config.resolveType) {
-    (0, _invariant2.default)(typeof config.resolveType === &#x27;function&#x27;, this.name + &#x27; must provide &#x22;resolveType&#x22; as a function.&#x27;);
+    (0, _invariant2.default)(typeof config.resolveType === 'function', this.name + ' must provide "resolveType" as a function.');
   }
   this.resolveType = config.resolveType;
   this._typeConfig = config;
@@ -5869,18 +5862,18 @@ String(config.query) + &#x27;.&#x27;);
         fieldDef = this._getFieldDef(schema, parentType, node);
       }
       this._fieldDefStack.push(fieldDef);
-      this._typeStack.push(fieldDef &#x26;&#x26; fieldDef.type);
+      this._typeStack.push(fieldDef &amp;&amp; fieldDef.type);
       break;
     case Kind.DIRECTIVE:
       this._directive = schema.getDirective(node.name.value);
       break;
     case Kind.OPERATION_DEFINITION:
       var type = void 0;
-      if (node.operation === &#x27;query&#x27;) {
+      if (node.operation === 'query') {
         type = schema.getQueryType();
-      } else if (node.operation === &#x27;mutation&#x27;) {
+      } else if (node.operation === 'mutation') {
         type = schema.getMutationType();
-      } else if (node.operation === &#x27;subscription&#x27;) {
+      } else if (node.operation === 'subscription') {
         type = schema.getSubscriptionType();
       }
       this._typeStack.push(type);
@@ -5991,7 +5984,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getFieldDef() {
-  if (this._fieldDefStack.length &#x3e; 0) {
+  if (this._fieldDefStack.length &gt; 0) {
     return this._fieldDefStack[this._fieldDefStack.length - 1];
   }
 }</pre></li>
@@ -6008,7 +6001,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getInputType() {
-  if (this._inputTypeStack.length &#x3e; 0) {
+  if (this._inputTypeStack.length &gt; 0) {
     return this._inputTypeStack[this._inputTypeStack.length - 1];
   }
 }</pre></li>
@@ -6025,7 +6018,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getParentType() {
-  if (this._parentTypeStack.length &#x3e; 0) {
+  if (this._parentTypeStack.length &gt; 0) {
     return this._parentTypeStack[this._parentTypeStack.length - 1];
   }
 }</pre></li>
@@ -6042,7 +6035,7 @@ String(config.query) + &#x27;.&#x27;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getType() {
-  if (this._typeStack.length &#x3e; 0) {
+  if (this._typeStack.length &gt; 0) {
     return this._typeStack[this._typeStack.length - 1];
   }
 }</pre></li>
@@ -6302,7 +6295,7 @@ String(config.query) + &#x27;.&#x27;);
     var setsToVisit = [node];
     while (setsToVisit.length !== 0) {
       var set = setsToVisit.pop();
-      for (var i = 0; i &#x3c; set.selections.length; i++) {
+      for (var i = 0; i &lt; set.selections.length; i++) {
         var selection = set.selections[i];
         if (selection.kind === Kind.FRAGMENT_SPREAD) {
           spreads.push(selection);
@@ -6362,7 +6355,7 @@ String(config.query) + &#x27;.&#x27;);
   if (!usages) {
     usages = this.getVariableUsages(operation);
     var fragments = this.getRecursivelyReferencedFragments(operation);
-    for (var i = 0; i &#x3c; fragments.length; i++) {
+    for (var i = 0; i &lt; fragments.length; i++) {
       Array.prototype.push.apply(usages, this.getVariableUsages(fragments[i]));
     }
     this._recursiveVariableUsages.set(operation, usages);
@@ -6390,7 +6383,7 @@ String(config.query) + &#x27;.&#x27;);
     while (nodesToVisit.length !== 0) {
       var _node = nodesToVisit.pop();
       var spreads = this.getFragmentSpreads(_node);
-      for (var i = 0; i &#x3c; spreads.length; i++) {
+      for (var i = 0; i &lt; spreads.length; i++) {
         var fragName = spreads[i].name.value;
         if (collectedNames[fragName] !== true) {
           collectedNames[fragName] = true;
@@ -6540,7 +6533,7 @@ String(config.query) + &#x27;.&#x27;);
       }).length;
     },
     OperationDefinition: function OperationDefinition(node) {
-      if (!node.name &#x26;&#x26; operationCount &#x3e; 1) {
+      if (!node.name &amp;&amp; operationCount &gt; 1) {
         context.reportError(new _error.GraphQLError(anonOperationNotAloneMessage(), [node]));
       }
     }
@@ -6563,7 +6556,7 @@ String(config.query) + &#x27;.&#x27;);
     InlineFragment: function InlineFragment(node) {
       var fragType = context.getType();
       var parentType = context.getParentType();
-      if (fragType &#x26;&#x26; parentType &#x26;&#x26; !(0, _typeComparators.doTypesOverlap)(context.getSchema(), fragType, parentType)) {
+      if (fragType &amp;&amp; parentType &amp;&amp; !(0, _typeComparators.doTypesOverlap)(context.getSchema(), fragType, parentType)) {
         context.reportError(new _error.GraphQLError(typeIncompatibleAnonSpreadMessage(parentType, fragType), [node]));
       }
     },
@@ -6571,7 +6564,7 @@ String(config.query) + &#x27;.&#x27;);
       var fragName = node.name.value;
       var fragType = getFragmentType(context, fragName);
       var parentType = context.getParentType();
-      if (fragType &#x26;&#x26; parentType &#x26;&#x26; !(0, _typeComparators.doTypesOverlap)(context.getSchema(), fragType, parentType)) {
+      if (fragType &amp;&amp; parentType &amp;&amp; !(0, _typeComparators.doTypesOverlap)(context.getSchema(), fragType, parentType)) {
         context.reportError(new _error.GraphQLError(typeIncompatibleSpreadMessage(fragName, parentType, fragType), [node]));
       }
     }
@@ -6626,7 +6619,7 @@ String(config.query) + &#x27;.&#x27;);
 
     spreadPathIndexByName[fragmentName] = spreadPath.length;
 
-    for (var i = 0; i &#x3c; spreadNodes.length; i++) {
+    for (var i = 0; i &lt; spreadNodes.length; i++) {
       var spreadNode = spreadNodes[i];
       var spreadName = spreadNode.name.value;
       var cycleIndex = spreadPathIndexByName[spreadName];
@@ -6708,7 +6701,7 @@ String(config.query) + &#x27;.&#x27;);
 
           var varName = node.name.value;
           if (variableNameDefined[varName] !== true) {
-            context.reportError(new _error.GraphQLError(undefinedVarMessage(varName, operation.name &#x26;&#x26; operation.name.value), [node
+            context.reportError(new _error.GraphQLError(undefinedVarMessage(varName, operation.name &amp;&amp; operation.name.value), [node
 , operation]));
           }
         });
@@ -6925,7 +6918,7 @@ String(config.query) + &#x27;.&#x27;);
       var argDef = context.getArgument();
       if (argDef) {
         var errors = (0, _isValidLiteralValue.isValidLiteralValue)(argDef.type, node.value);
-        if (errors &#x26;&#x26; errors.length &#x3e; 0) {
+        if (errors &amp;&amp; errors.length &gt; 0) {
           context.reportError(new _error.GraphQLError(badValueMessage(node.name.value, argDef.type, (0, _printer.print)(node.value
 ), errors), [node.value]));
         }
@@ -7002,7 +6995,7 @@ keys(schema.getTypeMap()))), [node]));
         });
         fieldDef.args.forEach(function (argDef) {
           var argNode = argNodeMap[argDef.name];
-          if (!argNode &#x26;&#x26; argDef.type instanceof _definition.GraphQLNonNull) {
+          if (!argNode &amp;&amp; argDef.type instanceof _definition.GraphQLNonNull) {
             context.reportError(new _error.GraphQLError(missingFieldArgMessage(node.name.value, argDef.name, argDef.type), [node
 ]));
           }
@@ -7024,7 +7017,7 @@ keys(schema.getTypeMap()))), [node]));
         });
         directiveDef.args.forEach(function (argDef) {
           var argNode = argNodeMap[argDef.name];
-          if (!argNode &#x26;&#x26; argDef.type instanceof _definition.GraphQLNonNull) {
+          if (!argNode &amp;&amp; argDef.type instanceof _definition.GraphQLNonNull) {
             context.reportError(new _error.GraphQLError(missingDirectiveArgMessage(node.name.value, argDef.name, argDef.type), [
 node]));
           }
@@ -7051,12 +7044,12 @@ node]));
       var name = node.variable.name.value;
       var defaultValue = node.defaultValue;
       var type = context.getInputType();
-      if (type instanceof _definition.GraphQLNonNull &#x26;&#x26; defaultValue) {
+      if (type instanceof _definition.GraphQLNonNull &amp;&amp; defaultValue) {
         context.reportError(new _error.GraphQLError(defaultForNonNullArgMessage(name, type, type.ofType), [defaultValue]));
       }
-      if (type &#x26;&#x26; defaultValue) {
+      if (type &amp;&amp; defaultValue) {
         var errors = (0, _isValidLiteralValue.isValidLiteralValue)(type, defaultValue);
-        if (errors &#x26;&#x26; errors.length &#x3e; 0) {
+        if (errors &amp;&amp; errors.length &gt; 0) {
           context.reportError(new _error.GraphQLError(badValueForDefaultArgMessage(name, type, (0, _printer.print)(defaultValue),
 errors), [defaultValue]));
         }
@@ -7101,7 +7094,7 @@ errors), [defaultValue]));
 
           var varName = node.name.value;
           var varDef = varDefMap[varName];
-          if (varDef &#x26;&#x26; type) {
+          if (varDef &amp;&amp; type) {
             // A var type is allowed if it is the same or more strict (e.g. is
             // a subtype of) than the expected type. It can be more strict if
             // the variable type is non-null when the expected type is nullable.
@@ -7109,7 +7102,7 @@ errors), [defaultValue]));
             // than the expected item type (contravariant).
             var schema = context.getSchema();
             var varType = (0, _typeFromAST.typeFromAST)(schema, varDef.type);
-            if (varType &#x26;&#x26; !(0, _typeComparators.isTypeSubTypeOf)(schema, effectiveType(varType, varDef), type)) {
+            if (varType &amp;&amp; !(0, _typeComparators.isTypeSubTypeOf)(schema, effectiveType(varType, varDef), type)) {
               context.reportError(new _error.GraphQLError(badVarPosMessage(varName, varType, type), [varDef, node]));
             }
           }
@@ -7134,12 +7127,12 @@ errors), [defaultValue]));
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function OverlappingFieldsCanBeMerged(context) {
-  // A memoization for when two fragments are compared &#x22;between&#x22; each other for
+  // A memoization for when two fragments are compared "between" each other for
   // conflicts. Two fragments may be compared many times, so memoizing this can
   // dramatically improve the performance of this validator.
   var comparedFragments = new PairSet();
 
-  // A cache for the &#x22;field map&#x22; and list of fragment names found in any given
+  // A cache for the "field map" and list of fragment names found in any given
   // selection set. Selection sets may be asked for this information multiple
   // times, so this improves the performance of this validator.
   var cachedFieldsAndFragmentNames = new Map();
@@ -7213,7 +7206,7 @@ errors), [defaultValue]));
     InlineFragment: function InlineFragment(node) {
       if (node.typeCondition) {
         var type = (0, _typeFromAST.typeFromAST)(context.getSchema(), node.typeCondition);
-        if (type &#x26;&#x26; !(0, _definition.isCompositeType)(type)) {
+        if (type &amp;&amp; !(0, _definition.isCompositeType)(type)) {
           context.reportError(new _error.GraphQLError(inlineFragmentOnNonCompositeErrorMessage((0, _printer.print)(node.typeCondition
 )), [node.typeCondition]));
         }
@@ -7221,7 +7214,7 @@ errors), [defaultValue]));
     },
     FragmentDefinition: function FragmentDefinition(node) {
       var type = (0, _typeFromAST.typeFromAST)(context.getSchema(), node.typeCondition);
-      if (type &#x26;&#x26; !(0, _definition.isCompositeType)(type)) {
+      if (type &amp;&amp; !(0, _definition.isCompositeType)(type)) {
         context.reportError(new _error.GraphQLError(fragmentOnNonCompositeErrorMessage(node.name.value, (0, _printer.print)(node
 .typeCondition)), [node.typeCondition]));
       }
@@ -7246,7 +7239,7 @@ errors), [defaultValue]));
       var type = (0, _typeFromAST.typeFromAST)(context.getSchema(), node.type);
 
       // If the variable type is not an input type, return an error.
-      if (type &#x26;&#x26; !(0, _definition.isInputType)(type)) {
+      if (type &amp;&amp; !(0, _definition.isInputType)(type)) {
         var variableName = node.variable.name.value;
         context.reportError(new _error.GraphQLError(nonInputTypeOnVarMessage(variableName, (0, _printer.print)(node.type)), [node
 .type]));
@@ -7301,7 +7294,7 @@ errors), [defaultValue]));
       if (type) {
         var fieldDef = context.getFieldDef();
         if (!fieldDef) {
-          // This field doesn&#x27;t exist, lets look for suggestions.
+          // This field doesn't exist, lets look for suggestions.
           var schema = context.getSchema();
           var fieldName = node.name.value;
           // First determine if there are any suggested types to condition on.
@@ -7427,3 +7420,4 @@ errors), [defaultValue]));
     ]
 </div>
 </div>
+</body></html>
